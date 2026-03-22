@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="moods">
+    {% for mood in moods %}
+        <a href="{% url 'mood_filter' mood.name %}">
+            {{ mood.name }}
+        </a>
+    {% endfor %}
+</div>
+
+{% if poems %}
+    {% for poem in poems %}
+        <div class="poem">
+            <div class="poem-title">
+                <a href="{% url 'poem_detail' poem.slug %}">
+                    {{ poem.title }}
+                </a>
+            </div>
+
+            <div class="poem-preview">
+                {{ poem.content|truncatewords:25 }}
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <div class="empty-state">
+        No poems yet. Come back later 🌙
+    </div>
+{% endif %}
+
+{% endblock %}

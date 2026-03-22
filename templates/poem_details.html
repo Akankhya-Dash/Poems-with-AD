@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="poem-detail">
+
+    <h1>{{ poem.title }}</h1>
+
+    <div class="poem-content">
+        {{ poem.content|linebreaks }}
+    </div>
+
+    <div class="meta">
+        {{ poem.mood }} · {{ poem.reading_time }} sec read
+    </div>
+
+</div>
+
+{% endblock %}
