@@ -1,147 +1,114 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --bg: #f5efe6;
+    --text: #2c2c2c;
+    --accent: #d6a4a4;
 }
 
+[data-theme="dark"] {
+    --bg: #1c1c1c;
+    --text: #f5f5f5;
+    --accent: #c08a8a;
+}
+
+/* Base */
 body {
+    margin: 0;
     font-family: Georgia, serif;
-    background-color: #f7f5f2;
-    color: #2c2c2c;
-    line-height: 1.8;
+    background: var(--bg);
+    color: var(--text);
+    transition: all 0.4s ease;
 }
 
 /* Layout */
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-/* Navbar */
-.navbar {
+.section {
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    font-size: 0.9rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.nav-left a,
-.nav-right a {
-    margin-right: 15px;
-    color: #6d6875;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
+/* Landing */
+.hero-title {
+    font-family: "Playfair Display", serif;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
-.nav-left a:last-child,
-.nav-right a:last-child {
-    margin-right: 0;
+.hero-sub {
+    opacity: 0.7;
+    margin-bottom: 30px;
 }
 
-.nav-left a:hover,
-.nav-right a:hover {
-    opacity: 0.6;
+.btn {
+    padding: 12px 24px;
+    background: var(--accent);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Mood Filter */
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Mood */
 .moods {
-    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
 }
 
 .moods a {
-    margin-right: 12px;
-    font-size: 0.85rem;
-    color: #6d6875;
     text-decoration: none;
+    color: var(--accent);
+    font-size: 1.2rem;
 }
 
 .moods a:hover {
     opacity: 0.6;
 }
 
-/* Poem Feed */
+/* Feed */
+.feed {
+    max-width: 600px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
 .poem {
-    margin-bottom: 70px;
+    margin-bottom: 60px;
 }
 
 .poem-title {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-}
-
-.poem-title a {
-    text-decoration: none;
-    color: #2c2c2c;
-}
-
-.poem-title a:hover {
-    opacity: 0.7;
+    font-family: "Libre Baskerville", serif;
+    font-size: 1.5rem;
 }
 
 .poem-preview {
-    font-size: 1rem;
-    color: #444;
+    margin-top: 10px;
 }
 
-/* Empty State */
-.empty-state {
-    text-align: center;
-    color: #888;
-    margin-top: 100px;
-}
-
-/* Poem Detail */
+/* Detail */
 .poem-detail {
+    max-width: 600px;
+    margin: auto;
+    padding: 80px 20px;
     text-align: center;
-}
-
-.poem-detail h1 {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
 }
 
 .poem-content {
+    margin-top: 40px;
     font-size: 1.2rem;
     line-height: 2;
-    white-space: pre-wrap;
-    margin-bottom: 40px;
 }
 
-.meta {
-    font-size: 0.85rem;
-    color: #888;
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease;
 }
 
-/* Forms */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-input, textarea, select {
-    padding: 10px;
-    border: 1px solid #ddd;
-    font-family: inherit;
-}
-
-button {
-    padding: 10px;
-    background-color: #6d6875;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-/* Messages */
-.message {
-    margin-bottom: 20px;
-    color: #6d6875;
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1;}
 }

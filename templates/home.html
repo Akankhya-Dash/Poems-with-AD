@@ -2,32 +2,51 @@
 
 {% block content %}
 
-<div class="moods">
-    {% for mood in moods %}
-        <a href="{% url 'mood_filter' mood.name %}">
-            {{ mood.name }}
-        </a>
-    {% endfor %}
+<!-- LANDING -->
+<div class="section fade-in">
+    <div class="hero-title">Nocturne</div>
+    <div class="hero-sub">a space for quiet words</div>
+    <button class="btn" onclick="scrollToSection('auth')">
+        Start Reading
+    </button>
 </div>
 
-{% if poems %}
-    {% for poem in poems %}
-        <div class="poem">
-            <div class="poem-title">
-                <a href="{% url 'poem_detail' poem.slug %}">
-                    {{ poem.title }}
-                </a>
-            </div>
+<!-- AUTH -->
+<div id="auth" class="section fade-in">
+    {% if user.is_authenticated %}
+        <button class="btn" onclick="scrollToSection('moods')">
+            Continue
+        </button>
+    {% else %}
+        <a href="{% url 'login' %}" class="btn">Login</a>
+    {% endif %}
+</div>
 
-            <div class="poem-preview">
-                {{ poem.content|truncatewords:25 }}
-            </div>
-        </div>
-    {% endfor %}
-{% else %}
-    <div class="empty-state">
-        No poems yet. Come back later 🌙
+<!-- MOODS -->
+<div id="moods" class="section fade-in">
+    <div class="moods">
+        {% for mood in moods %}
+            <a href="{% url 'mood_filter' mood.name %}">
+                {{ mood.name }}
+            </a>
+        {% endfor %}
     </div>
-{% endif %}
+</div>
+
+<!-- FEED -->
+<div class="feed">
+    {% for poem in poems %}
+    <div class="poem fade-in">
+        <div class="poem-title">
+            <a href="{% url 'poem_detail' poem.slug %}">
+                {{ poem.title }}
+            </a>
+        </div>
+        <div class="poem-preview">
+            {{ poem.content|truncatewords:25 }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

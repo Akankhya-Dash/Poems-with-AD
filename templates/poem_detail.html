@@ -4,15 +4,19 @@
 
 <div class="poem-detail">
 
+    {% if poem.image %}
+        <img src="{{ poem.image.url }}" style="width:100%; margin-bottom:30px;">
+    {% endif %}
+
     <h1>{{ poem.title }}</h1>
 
     <div class="poem-content">
         {{ poem.content|linebreaks }}
     </div>
 
-    <div class="meta">
+    <p style="margin-top:30px; opacity:0.6;">
         {{ poem.mood }} · {{ poem.reading_time }} sec read
-    </div>
+    </p>
 
 </div>
 
