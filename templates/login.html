@@ -1,15 +1,155 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% block content %}
-
-<div class="section">
-    <h2>Login</h2>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn">Login</button>
-    </form>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Poems with AD | Return to your shelf</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e7e2d9",
+                        "on-tertiary-fixed": "#022114",
+                        "surface-container-highest": "#e7e2d9",
+                        "primary-container": "#d6a4a4",
+                        "inverse-primary": "#eebaba",
+                        "on-surface-variant": "#504444",
+                        "tertiary": "#466555",
+                        "background": "#fff9ef",
+                        "on-surface": "#1d1b16",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "tertiary-container": "#97b8a5",
+                        "surface-container": "#f3ede4",
+                        "primary": "#7c5454",
+                        "on-primary-container": "#5e393a",
+                        "inverse-surface": "#32302a",
+                        "error-container": "#ffdad6",
+                        "secondary": "#5f5e5e",
+                        "tertiary-fixed-dim": "#adcebb",
+                        "on-secondary-container": "#656464",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#301314",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#7c5454",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#2b493b",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#623d3d",
+                        "surface-container-high": "#ede7de",
+                        "surface-dim": "#dfd9d1",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-tertiary-fixed-variant": "#2f4d3e",
+                        "secondary-container": "#e4e2e1",
+                        "primary-fixed-dim": "#eebaba",
+                        "surface-bright": "#fff9ef",
+                        "surface": "#fff9ef",
+                        "primary-fixed": "#ffdad9",
+                        "tertiary-fixed": "#c8ebd6",
+                        "outline-variant": "#d5c2c2",
+                        "outline": "#837473",
+                        "surface-container-low": "#f9f3ea",
+                        "secondary-fixed": "#e4e2e1",
+                        "inverse-on-surface": "#f6f0e7",
+                        "on-background": "#1d1b16"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>body {
+    background-color: #fff9ef;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDAAM6SmTycSGFnQ18P7ccAseYWMxGaB5g_3cQn8xafw2pNaYMOISi2cN1MDEpd684B6yZQHE6_fdkPn_-xWnleftY4wjbrurDqCKKpaZZCScpOi8CJZbsd85tY1xi00g8Der2aNL1lXwewPIbCCjjIriQ8kbzErBBGz63p7RVYAwhzh2qfHWwPa19uGMuh0xQdj1-CKq0m0oPIPsMPY6RLkiLyClRATQoFS9P7jG97UXz2dNUEsc11SLAsf3SE4OWAylYgNhTaZh8)
+    }
+.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+    }
+.ghost-border-input {
+    border: none;
+    border-bottom: 1px solid rgba(131, 116, 115, 0.2);
+    background: transparent;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0
+    }
+.ghost-border-input:focus {
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid #7c5454
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col items-center justify-center p-6">
+<header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 backdrop-blur-xl flex items-center justify-center px-8 py-8 w-full">
+<div class="font-headline italic text-primary text-2xl tracking-tighter">Poems with AD</div>
+</header>
+<main class="w-full max-w-[480px] mt-16 mb-24">
+<div class="text-center mb-16 space-y-4">
+<h1 class="font-headline text-4xl md:text-5xl text-on-surface tracking-tight">Return to your shelf</h1>
+<p class="font-headline italic text-on-surface-variant text-lg">“What you seek is seeking you.”</p>
 </div>
-
-{% endblock %}
+<div class="bg-surface-container-lowest/40 backdrop-blur-md p-10 md:p-14 shadow-[0_32px_64px_-12px_rgba(29,27,22,0.08)] relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-primary/20"></div>
+<form action="#" class="space-y-10" method="POST">
+<div class="space-y-8">
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Email Address</label>
+<input class="ghost-border-input w-full py-3 italic text-on-surface placeholder:text-on-surface-variant/40" name="email" placeholder="Your ink here..." type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Passage Key</label>
+<input class="ghost-border-input w-full py-3 italic text-on-surface placeholder:text-on-surface-variant/40" name="password" placeholder="The silent word..." type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-outline-variant text-primary focus:ring-primary/20 bg-transparent" type="checkbox"/>
+<span class="font-label text-xs text-on-surface-variant group-hover:text-primary transition-colors">Keep the candle lit</span>
+</label>
+<a class="font-label text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Forgot key?</a>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 font-label tracking-widest uppercase text-sm rounded-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-sm" type="submit">
+                    Enter your Journey
+                </button>
+</form>
+<div class="mt-12 text-center">
+<p class="text-on-surface-variant text-sm font-body">
+                    A new traveler? 
+                    <a class="text-primary font-bold ml-2 underline underline-offset-8 decoration-primary/30 hover:decoration-primary transition-all" href="#">Join the circle</a>
+</p>
+</div>
+</div>
+<div class="mt-16 flex justify-center items-center gap-6">
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+<span class="material-symbols-outlined text-outline-variant text-lg">menu_book</span>
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+</div>
+</main>
+<footer class="fixed bottom-12 w-full text-center">
+<p class="text-[10px] font-label uppercase tracking-[0.3em] text-on-surface-variant/40 px-6">
+            Designed for the quiet moments © 2026 
+            AD's memory lane
+        </p>
+</footer>
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-[0.03] mix-blend-multiply z-[-1]" data-alt="Subtle aged paper texture overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAKpPt2We0QaghwsbPCzbBf7qig9D4nj0q1OOFDyoI4LNLOfDMvGUrOOHXO_YGxbl4gtCpuKzwLeL2AjrDTyB82yUNgIRQewGJfgVYShst1u6lr7pnqb1WnlM7HMNGflBe4N83_6uL71xwki5CRFZm_R1DOg9WzVl9EN1Sed96KC7qJbo1UxxBlq9TdTV811WWTmdw8cw91ZMy7RN21Ok7lYaZquL-2Y78B1sNXViAUlwOtyGjIr7D_MPJn-mdJlr09jzIA8OT7xPg');">
+</div>
+</body></html>

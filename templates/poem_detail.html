@@ -1,23 +1,165 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% block content %}
-
-<div class="poem-detail">
-
-    {% if poem.image %}
-        <img src="{{ poem.image.url }}" style="width:100%; margin-bottom:30px;">
-    {% endif %}
-
-    <h1>{{ poem.title }}</h1>
-
-    <div class="poem-content">
-        {{ poem.content|linebreaks }}
-    </div>
-
-    <p style="margin-top:30px; opacity:0.6;">
-        {{ poem.mood }} · {{ poem.reading_time }} sec read
-    </p>
-
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nocturne | {{ poem.title }}</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;family=Inter:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#f5efe6",
+                        "on-surface": "#2d2926",
+                        "on-surface-variant": "#6b625a",
+                        "primary": "#b88686", // Dusty Rose
+                        "primary-container": "#f0e1e1",
+                        "on-primary-container": "#4a2c2c",
+                        "outline-variant": "#d9d2c7",
+                        "background": "#f5efe6",
+                    },
+                    fontFamily: {
+                        "headline": ["Playfair Display", "serif"],
+                        "body": ["Lora", "serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f5efe6;
+            color: #2d2926;
+            cursor: auto;
+            transition: cursor 0.5s ease;
+        }
+        .hide-cursor {
+            cursor: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .poem-content p {
+            margin-bottom: 2.5rem;
+        }
+        .cinematic-fade {
+            animation: fadeIn 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        ::selection {
+            background-color: rgba(184, 134, 134, 0.2);
+            color: #4a2c2c;
+        }
+    </style>
+</head>
+<body class="font-body min-h-screen flex flex-col selection:bg-primary/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f5efe6]/80 backdrop-blur-md">
+<div class="flex items-center justify-between px-8 py-6 max-w-[700px] mx-auto">
+<a href="{% url 'home' %}"
+   class="text-on-surface-variant opacity-70 hover:opacity-100 flex items-center gap-2">
+    <span class="material-symbols-outlined text-sm">arrow_back_ios</span>
+    <span class="font-label text-[10px] uppercase tracking-[0.2em]">Back</span>
+</a>
+<div class="text-xl font-headline italic tracking-[0.1em] text-on-surface">Poems With AD</div>
+<button class="text-on-surface-variant opacity-70 hover:text-primary transition-all">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
 </div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-32 pb-40 px-6 sm:px-0">
+<article class="max-w-[640px] mx-auto cinematic-fade">
+<!-- Poem Header -->
+<header class="mb-24 text-center">
+<div class="inline-block mb-8">
+<span class="font-label text-[10px] uppercase tracking-[0.4em] text-on-surface-variant/60 block mb-3">Verse Anthology</span>
+<div class="h-[1px] w-12 bg-primary/40 mx-auto"></div>
+</div>
+<h1 class="font-headline text-4xl md:text-5xl lg:text-6xl text-on-surface leading-[1.2] tracking-tight mb-10">
+                {{ poem.title }}
+            </h1>
+<div class="flex items-center justify-center gap-4 text-on-surface-variant font-body italic text-sm">
+<span class="poem-meta tracking-wide">{{ poem.mood }}</span>
+<span class="opacity-30">/</span>
+<span class="poem-meta tracking-wide">{{ poem.reading_time }} sec read</span>
+</div>
+</header>
+<!-- Visual Break: Rumi Aesthetic Texture -->
+<div class="relative w-full h-[400px] mb-24 overflow-hidden rounded-sm bg-[#e8e2d9] group">
+<div class="absolute inset-0 bg-gradient-to-b from-[#f5efe6]/20 via-transparent to-[#f5efe6]/20 z-10"></div>
+<img class="w-full h-full object-cover opacity-60 mix-blend-multiply group-hover:scale-105 transition-transform duration-[3000ms] ease-out" data-alt="Soft focused detail of parchment paper, subtle coffee stains, dried flower petals, and warm morning light, Rumi aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9LrsvTXynQN8OOtAA3jb3nsGCsNGemvBhg9FfvMDQPfFKFK8ox8Jv7sa4rDbC6qSvw9BRrX6w5rTbVTuycjCg5HEtPoiNrLen8Rm5XjItJZ39b9acdcEkJHovvlWM3Nos9C3jcoB1O4T2Hp7u9x3YGcdSdpJ8jdgZ_pCHtva6XGNYJOTQJFndW6xTrRNBdWvA8XI0z3j3_J9i-jPM0wp5jHjqgzGuNNoxogu8_6VIEidLejurCQko5JVtXTukngImpzACsRVhkfU"/>
+</div>
+<!-- Poem Body -->
+<section class="poem-content font-body text-xl md:text-2xl leading-[2.2] text-on-surface/90 antialiased tracking-normal max-w-[540px] mx-auto">
+            {{ poem.content|linebreaks }}
+        </section>
+<!-- Post-Poem Metadata -->
+<footer class="mt-32 pt-16 border-t border-outline-variant/60 text-center">
+<div class="font-headline italic text-2xl text-on-surface mb-3">
+                {{ poem.author.name|default:"Anonymous" }}
+            </div>
+<p class="font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant/50">
+                Published in Nocturne Vol. IV
+            </p>
+<div class="mt-16 flex justify-center gap-10">
+<button class="flex flex-col items-center gap-3 group">
+<div class="w-14 h-14 flex items-center justify-center rounded-full border border-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</div>
+<span class="font-label text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100 group-hover:text-primary transition-opacity">Appreciate</span>
+</button>
+<button class="flex flex-col items-center gap-3 group">
+<div class="w-14 h-14 flex items-center justify-center rounded-full border border-primary/20 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
+<span class="material-symbols-outlined">share</span>
+</div>
+<span class="font-label text-[9px] uppercase tracking-widest opacity-60 group-hover:opacity-100 group-hover:text-primary transition-opacity">Whisper</span>
+</button>
+</div>
+</footer>
+</article>
+</main>
+<!-- Footer -->
+<footer class="w-full py-24 bg-transparent border-t border-outline-variant/30">
+<div class="max-w-[600px] mx-auto flex flex-col items-center gap-6 text-center">
+<div class="text-on-surface font-headline italic text-xl tracking-wider">Poems with AD</div>
+<p class="font-body italic text-xs tracking-wide text-on-surface-variant">© Editorial</p>
+<div class="flex gap-8 mt-4">
+<a class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 hover:text-primary transition-all" href="#">About</a>
+<a class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 hover:text-primary transition-all" href="#">Archive</a>
+<a class="font-label text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60 hover:text-primary transition-all" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+<!-- Immersive Mode Cursor Control -->
+<script>
+    let cursorTimeout;
+    const body = document.body;
 
-{% endblock %}
+    function hideCursor() {
+        body.classList.add('hide-cursor');
+    }
+
+    function resetCursorTimer() {
+        body.classList.remove('hide-cursor');
+        clearTimeout(cursorTimeout);
+        cursorTimeout = setTimeout(hideCursor, 3000);
+    }
+
+    window.addEventListener('mousemove', resetCursorTimer);
+    window.addEventListener('keydown', resetCursorTimer);
+    window.addEventListener('touchstart', resetCursorTimer);
+
+    // Initial trigger
+    resetCursorTimer();
+</script>
+</body></html>

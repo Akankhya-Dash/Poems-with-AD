@@ -1,17 +1,207 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
 
-{% block content %}
-
-<div class="section">
-
-    <h2>Submit a poem</h2>
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn">Submit</button>
-    </form>
-
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Submit Verse | Nocturne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;family=Literata:ital,wght@0,200..900;1,200..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#a73b21",
+                        "background": "#fff8f4",
+                        "on-error-container": "#6e1400",
+                        "tertiary": "#5c6330",
+                        "surface-container": "#fbebdd",
+                        "secondary-fixed-dim": "#edcfaf",
+                        "error-container": "#fd795a",
+                        "secondary-container": "#fcddbd",
+                        "inverse-surface": "#120d08",
+                        "tertiary-fixed": "#f4fcba",
+                        "surface-container-low": "#fff1e5",
+                        "inverse-primary": "#fcc582",
+                        "secondary-fixed": "#fcddbd",
+                        "on-tertiary-fixed-variant": "#656c38",
+                        "outline": "#86786a",
+                        "tertiary-fixed-dim": "#e6eead",
+                        "primary-dim": "#724b14",
+                        "inverse-on-surface": "#a59b92",
+                        "error-dim": "#791903",
+                        "tertiary-container": "#f4fcba",
+                        "surface-container-highest": "#f1e0cf",
+                        "on-tertiary-container": "#5a612e",
+                        "on-primary": "#fff7f3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#3b3125",
+                        "surface-container-high": "#f6e5d7",
+                        "surface": "#fff8f4",
+                        "primary-fixed": "#fcc582",
+                        "on-secondary": "#fff7f3",
+                        "surface-variant": "#f1e0cf",
+                        "secondary": "#715b41",
+                        "surface-bright": "#fff8f4",
+                        "on-surface-variant": "#6a5d50",
+                        "on-tertiary-fixed": "#484f1e",
+                        "primary-fixed-dim": "#edb776",
+                        "surface-tint": "#80571f",
+                        "on-primary-container": "#623e06",
+                        "secondary-dim": "#654f36",
+                        "on-secondary-fixed": "#4f3c24",
+                        "primary-container": "#fcc582",
+                        "on-surface": "#3b3125",
+                        "on-primary-fixed-variant": "#6d470f",
+                        "on-error": "#fff7f6",
+                        "primary": "#80571f",
+                        "outline-variant": "#bfafa0",
+                        "on-secondary-fixed-variant": "#6e583e",
+                        "on-secondary-container": "#634e35",
+                        "on-tertiary": "#f6ffbc",
+                        "on-primary-fixed": "#492c00",
+                        "surface-dim": "#e9d7c6",
+                        "tertiary-dim": "#505725"
+                    },
+                    fontFamily: {
+                        "headline": ["EB Garamond"],
+                        "body": ["Sora"],
+                        "label": ["Literata"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .overhanging-typography {
+            letter-spacing: -0.02em;
+        }
+        .manuscript-shadow {
+            box-shadow: 0 10px 40px -15px rgba(59, 49, 37, 0.08);
+        }
+        .silk-border {
+            border-bottom: 1px solid rgba(134, 120, 106, 0.2);
+        }
+        textarea:focus, input:focus, select:focus {
+            outline: none !important;
+            box-shadow: none !important;
+            border-bottom-color: #7c5454 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#f9f3ea] text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#7c5454]" data-icon="menu">menu</span>
 </div>
-
-{% endblock %}
+<h1 class="text-3xl font-headline font-medium tracking-wide italic overhanging-typography text-[#7c5454]">Nocturne</h1>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 font-label text-sm uppercase tracking-widest text-[#1d1b16]/60">
+<a class="hover:text-[#7c5454] transition-colors duration-500" href="#">Archives</a>
+<a class="hover:text-[#7c5454] transition-colors duration-500" href="#">Poets</a>
+<a class="text-[#7c5454] font-bold underline decoration-1 underline-offset-8" href="#">Submit</a>
+</nav>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="close up portrait of a young man with a contemplative expression in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6nJIUS4qrldlY5LCNhfB12uHSyx7VjsoXrQ2j6gTFT3FnpIUVhtW3I6Ua4lFkerO49TpHb4l8hXWNdOf44PKTxCHxiQIqiTFD0-ExhM4umKWlgQl9HnyahH6RJYDW-3QkkTvsEDQUb4r3nv27j0i7vlbycHvn9F1OGrIBMOL98fX9Z_Tj1QutRbWlDa5Dh7AJ0BzYRjTkfWV4OzP7pqro-IX6nLYIWWtk_fU82g3IkiKqSG7uPkfUDl0hK3PAvZ9x28CnfW_EQA"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-6 max-w-4xl mx-auto min-h-screen flex flex-col items-center">
+<!-- Page Header -->
+<div class="text-center mb-16 space-y-4">
+<h2 class="text-5xl md:text-6xl font-headline italic text-on-surface">The Silent Ink</h2>
+<p class="font-label text-on-surface-variant italic tracking-wide">"Words are a pretext. It is the inner bond that draws one person to another."</p>
+</div>
+<!-- Success Message (Conditional Logic) -->
+<!-- {% if messages %} -->
+<div class="w-full mb-12 bg-surface-container-low p-6 rounded-sm manuscript-shadow border-l-4 border-tertiary flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<p class="font-label text-on-surface">Your words have been captured. They now reside in the archives.</p>
+</div>
+<!-- {% endif %} -->
+<!-- Submission Form Card -->
+<section class="w-full bg-surface-container-lowest p-8 md:p-16 rounded-sm manuscript-shadow relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#7c5454]/20 to-transparent"></div>
+<form class="space-y-12" enctype="multipart/form-data" method="POST">
+<!-- {% csrf_token %} -->
+<!-- Title Field -->
+<div class="space-y-2 group">
+<label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">Title of the Verse</label>
+<input class="w-full bg-transparent border-t-0 border-x-0 border-b silk-border py-4 font-headline text-3xl focus:ring-0 focus:border-[#7c5454] placeholder:italic placeholder:opacity-30" name="title" placeholder="Enter a title..." type="text" value="{{ form.title.value|default:'' }}"/>
+</div>
+<!-- Content Field -->
+<div class="space-y-2 group">
+<label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">The Composition</label>
+<textarea class="w-full bg-transparent border-t-0 border-x-0 border-b silk-border py-4 font-headline text-xl leading-relaxed focus:ring-0 focus:border-[#7c5454] placeholder:italic placeholder:opacity-30 resize-none" name="content" placeholder="Let your spirit speak through the lines..." rows="10">{{ form.content.value|default:'' }}</textarea>
+</div>
+<!-- Meta Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Mood Dropdown -->
+<div class="space-y-2 group">
+<label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">The Resonance (Mood)</label>
+<select class="w-full bg-transparent border-t-0 border-x-0 border-b silk-border py-4 font-label text-sm focus:ring-0 focus:border-[#7c5454] appearance-none" name="mood">
+<option value="melancholy">Melancholy</option>
+<option value="euphoria">Euphoria</option>
+<option value="solitude">Solitude</option>
+<option value="longing">Longing</option>
+<option value="serenity">Serenity</option>
+</select>
+</div>
+<!-- Image Upload -->
+<div class="space-y-2 group">
+<label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">Visual Companion (Optional)</label>
+<div class="relative w-full border-b silk-border py-4">
+<input class="absolute inset-0 opacity-0 cursor-pointer z-10" id="id_image" name="image" type="file"/>
+<div class="flex items-center justify-between text-on-surface-variant/60 italic font-label text-sm">
+<span>Choose a fragment of imagery...</span>
+<span class="material-symbols-outlined text-sm" data-icon="image">image</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-8 flex justify-center md:justify-end">
+<button class="group relative px-12 py-4 bg-[#7c5454] text-on-primary rounded-sm transition-all duration-500 hover:shadow-xl hover:shadow-[#7c5454]/20 hover:-translate-y-1 active:scale-95" type="submit">
+<span class="font-label uppercase tracking-[0.3em] text-sm">Share Verse</span>
+<div class="absolute inset-0 border border-[#7c5454] translate-x-1 translate-y-1 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform -z-10"></div>
+</button>
+</div>
+</form>
+</section>
+<!-- Decorative Quote Footer for Main -->
+<div class="mt-24 max-w-lg text-center opacity-40 italic font-headline text-lg">
+<p>“Writing is a way of talking without being interrupted.”</p>
+<span class="block mt-2 font-label text-xs uppercase tracking-widest">— Jules Renard</span>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-[#fff9ef] dark:bg-[#1d1b16]">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-[#1d1b16]/5 max-w-7xl mx-auto pt-12">
+<div class="font-headline italic text-2xl text-[#7c5454]">Poems With AD.</div>
+<nav class="flex flex-wrap justify-center gap-8 font-label text-sm tracking-widest uppercase text-[#1d1b16]/40">
+<a class="hover:text-[#7c5454] transition-all" href="#">Archives</a>
+<a class="hover:text-[#7c5454] transition-all" href="#">Poets</a>
+<a class="hover:text-[#7c5454] transition-all" href="#">Submission Guidelines</a>
+<a class="hover:text-[#7c5454] transition-all" href="#">Privacy</a>
+</nav>
+<div class="font-label text-sm tracking-widest uppercase text-[#1d1b16]/40">
+                © 2026 Poems With AD. The Modern Manuscript.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nocturne | Join the Circle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Sora:wght@300;400;500;600&amp;family=Literata:ital,wght@0,300;0,400;0,500;1,300&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary-container": "#fcc582",
+                "on-secondary-container": "#634e35",
+                "on-background": "#3b3125",
+                "secondary-container": "#fcddbd",
+                "on-error-container": "#6e1400",
+                "surface-bright": "#fff8f4",
+                "on-tertiary-fixed-variant": "#656c38",
+                "inverse-surface": "#120d08",
+                "surface-container-low": "#fff1e5",
+                "secondary-dim": "#654f36",
+                "on-tertiary-container": "#5a612e",
+                "tertiary-container": "#f4fcba",
+                "inverse-primary": "#fcc582",
+                "tertiary": "#5c6330",
+                "tertiary-dim": "#505725",
+                "secondary-fixed": "#fcddbd",
+                "on-tertiary-fixed": "#484f1e",
+                "primary-dim": "#724b14",
+                "outline-variant": "#bfafa0",
+                "outline": "#86786a",
+                "on-error": "#fff7f6",
+                "secondary": "#715b41",
+                "background": "#fff8f4",
+                "tertiary-fixed-dim": "#e6eead",
+                "surface-dim": "#e9d7c6",
+                "error-dim": "#791903",
+                "on-surface-variant": "#6a5d50",
+                "error": "#a73b21",
+                "surface-container-high": "#f6e5d7",
+                "on-primary-fixed": "#492c00",
+                "on-secondary-fixed-variant": "#6e583e",
+                "tertiary-fixed": "#f4fcba",
+                "primary-fixed": "#fcc582",
+                "on-primary-fixed-variant": "#6d470f",
+                "on-primary-container": "#623e06",
+                "error-container": "#fd795a",
+                "surface-container-highest": "#f1e0cf",
+                "on-primary": "#fff7f3",
+                "surface-container-lowest": "#ffffff",
+                "surface-variant": "#f1e0cf",
+                "surface-tint": "#80571f",
+                "secondary-fixed-dim": "#edcfaf",
+                "surface": "#fff8f4",
+                "on-secondary-fixed": "#4f3c24",
+                "primary-fixed-dim": "#edb776",
+                "on-tertiary": "#f6ffbc",
+                "on-surface": "#3b3125",
+                "inverse-on-surface": "#a59b92",
+                "on-secondary": "#fff7f3",
+                "surface-container": "#fbebdd",
+                "primary": "#80571f"
+              },
+              fontFamily: {
+                "headline": ["Eb Garamond", "serif"],
+                "body": ["Sora", "sans-serif"],
+                "label": ["Literata", "serif"]
+              },
+              borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        /* Custom styles for Django's as_p to match our design system */
+        .poetry-form p {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .poetry-form label {
+            font-family: 'Sora', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #6a5d50;
+            margin-bottom: 0.5rem;
+        }
+        .poetry-form input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(191, 175, 160, 0.4);
+            padding: 0.75rem 0;
+            font-family: 'Literata', serif;
+            color: #3b3125;
+            transition: border-color 0.3s ease;
+        }
+        .poetry-form input:focus {
+            outline: none;
+            border-bottom: 2px solid #7c5454;
+            ring: 0;
+            box-shadow: none;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#f5efe6] text-on-surface min-h-screen flex flex-col font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Anchor (Suppressed/Minimal for focused journey) -->
+<nav class="fixed top-0 w-full z-50 flex items-center justify-between px-8 py-8 md:px-16">
+<a class="text-[#1d1b16] font-headline italic text-2xl tracking-tight" href="/">Nocturne</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Philosophy</a>
+<a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a>
+</div>
+</nav>
+<main class="flex-grow flex items-center justify-center px-6 py-24 relative overflow-hidden">
+<!-- Abstract Background Detail -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary-container/10 rounded-full blur-[100px] pointer-events-none"></div>
+<!-- The Form Monolith -->
+<div class="w-full max-w-lg z-10">
+<!-- Header Section -->
+<div class="text-center mb-16">
+<h1 class="font-headline text-5xl md:text-6xl text-[#1d1b16] mb-4 font-medium italic">Join the Circle</h1>
+<p class="font-label text-on-surface-variant italic text-lg opacity-80">Begin your journey into quiet words.</p>
+</div>
+<!-- Card Structure -->
+<div class="bg-surface-container-lowest/40 backdrop-blur-xl p-10 md:p-14 shadow-[0_32px_64px_-12px_rgba(29,27,22,0.08)]">
+<form class="poetry-form" method="post">
+<!-- Django template representation -->
+<div class="space-y-2">
+<!-- Mocking {{ form.as_p }} logic for visual design -->
+<p>
+<label for="id_username">Username</label>
+<input id="id_username" name="username" placeholder="e.g. rumi_verses" type="text"/>
+</p>
+<p>
+<label for="id_email">Email</label>
+<input id="id_email" name="email" placeholder="heart@nocturne.com" type="email"/>
+</p>
+<p>
+<label for="id_password">Password</label>
+<input id="id_password" name="password" placeholder="••••••••" type="password"/>
+</p>
+<p>
+<label for="id_confirm">Confirm Password</label>
+<input id="id_confirm" name="confirm" placeholder="••••••••" type="password"/>
+</p>
+</div>
+<div class="mt-12 flex flex-col items-center gap-8">
+<button class="w-full bg-[#7c5454] text-white py-5 font-headline text-xl italic tracking-wide hover:bg-[#684646] transition-all active:scale-[0.98] shadow-sm" type="submit">
+                            Create Account
+                        </button>
+<div class="flex flex-col items-center gap-2">
+<span class="text-[10px] uppercase tracking-[0.2em] text-outline italic">The path ahead is clear.</span>
+<a class="font-label text-on-surface italic hover:text-[#7c5454] transition-colors border-b border-outline/20 pb-0.5" href="/login">
+                                Already a traveler? Sign in
+                            </a>
+</div>
+</div>
+</form>
+</div>
+<!-- Editorial Accent -->
+<div class="mt-20 text-center opacity-40 select-none">
+<span class="material-symbols-outlined text-4xl">ink_pen</span>
+<p class="mt-4 font-headline text-sm tracking-widest italic uppercase">Ink &amp; Silence</p>
+</div>
+</div>
+</main>
+<!-- Minimal Footer -->
+<footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto border-t border-outline-variant/10">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">© 2024 Nocturne. All verses reserved.</p>
+<div class="flex gap-8">
+<a class="font-label text-[10px] uppercase tracking-widest text-outline hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-label text-[10px] uppercase tracking-widest text-outline hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</footer>
+<!-- Decorative Corner Element -->
+<div class="fixed bottom-0 right-0 p-8 hidden lg:block pointer-events-none">
+<div class="w-px h-32 bg-outline/20 mb-4 mx-auto"></div>
+<div class="font-headline text-xs text-outline vertical-lr rotate-180 uppercase tracking-[0.5em] whitespace-nowrap" style="writing-mode: vertical-rl;">The Monolith Awaits</div>
+</div>
+</body></html>
