@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;family=Sora:wght@100..800&amp;family=Literata:ital,wght@0,200..900;1,200..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-family: 'EB Garamond', serif; font-style: italic; }
+        .manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#80571f",
+              "tertiary": "#5c6330",
+              "surface-variant": "#f1e0cf",
+              "on-primary-fixed": "#492c00",
+              "surface-container-highest": "#f1e0cf",
+              "tertiary-fixed-dim": "#e6eead",
+              "on-tertiary-container": "#5a612e",
+              "secondary-container": "#fcddbd",
+              "surface-bright": "#fff8f4",
+              "on-surface": "#3b3125",
+              "background": "#fff8f4",
+              "primary-dim": "#724b14",
+              "outline-variant": "#bfafa0",
+              "on-tertiary": "#f6ffbc",
+              "surface-dim": "#e9d7c6",
+              "inverse-surface": "#120d08",
+              "on-secondary-fixed-variant": "#6e583e",
+              "on-surface-variant": "#6a5d50",
+              "tertiary-container": "#f4fcba",
+              "on-primary": "#fff7f3",
+              "primary-fixed": "#fcc582",
+              "tertiary-dim": "#505725",
+              "secondary-dim": "#654f36",
+              "surface-container-low": "#fff1e5",
+              "primary-fixed-dim": "#edb776",
+              "on-tertiary-fixed-variant": "#656c38",
+              "secondary-fixed": "#fcddbd",
+              "on-error": "#fff7f6",
+              "on-error-container": "#6e1400",
+              "primary-container": "#fcc582",
+              "outline": "#86786a",
+              "secondary": "#715b41",
+              "on-tertiary-fixed": "#484f1e",
+              "error-dim": "#791903",
+              "on-primary-container": "#623e06",
+              "error": "#a73b21",
+              "secondary-fixed-dim": "#edcfaf",
+              "surface-tint": "#80571f",
+              "on-secondary-container": "#634e35",
+              "on-secondary-fixed": "#4f3c24",
+              "surface-container-high": "#f6e5d7",
+              "error-container": "#fd795a",
+              "tertiary-fixed": "#f4fcba",
+              "on-secondary": "#fff7f3",
+              "inverse-on-surface": "#a59b92",
+              "on-primary-fixed-variant": "#6d470f",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#fff8f4",
+              "surface-container": "#fbebdd",
+              "on-background": "#3b3125",
+              "inverse-primary": "#fcc582"
+            },
+            fontFamily: {
+              "headline": ["Eb Garamond"],
+              "body": ["Sora"],
+              "label": ["Literata"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(29,27,22,0.05)] flex justify-between items-center px-8 h-20 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#7c5454] dark:text-[#eab77a] active:scale-95 duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-2xl font-serif text-[#1d1b16] dark:text-[#fff9ef] font-['EB_Garamond'] italic tracking-wide">The Manuscript</h1>
+</div>
+<nav class="hidden md:flex gap-8 manrope text-sm tracking-widest uppercase font-medium">
+<a class="text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-all" href="#">Archives</a>
+<a class="text-[#7c5454] dark:text-[#eab77a]" href="#">Poets</a>
+<a class="text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-all" href="#">Philosophy</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#7c5454] dark:text-[#eab77a] active:scale-95 duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Header -->
+<section class="mb-24 text-center">
+<h2 class="font-headline text-6xl md:text-8xl text-on-surface mb-6 leading-tight">Voices of Nocturne</h2>
+<div class="w-24 h-px bg-primary/30 mx-auto mb-8"></div>
+<p class="font-label italic text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                A curation of souls who capture the ink of the night on the silk of the mind.
+            </p>
+</section>
+<!-- Poets List Container -->
+<div class="space-y-32 max-w-4xl mx-auto">
+            
+            {% for poet in poets %}
+            <article class="group relative flex flex-col md:flex-row gap-12 items-center">
+<!-- Profile Image with Asymmetric placement -->
+<div class="w-full md:w-1/3 aspect-[4/5] overflow-hidden bg-surface-container shadow-sm relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="{{ poet.name }}" class="w-full h-full object-cover mix-blend-multiply opacity-90 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Moody cinematic portrait of an artisan in a dimly lit studio with soft window light casting gentle shadows on a textured wall" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi32WQovrkuhegQxlmlhbekqGgX3t8gIaPveh5O4u8MH6t_qUJ6jusKRODl-vpJP0zuOr9Y9cTIIjy2UPBIMl-tVYLPJTmy3CATcFHHml4Z1ck_bABL_nHVpImUSxdK_V8Z33gg00xWrSq4zwCCs0Hjc52ELp8AvvZbym6qhfb6mbMrf-J91YKy6LeUW-DACIb09vQpBLnPtx2Q4xZtORMLfiJZwwL3F5XqWtR2eLhDhItBamdUe6OVte0qbh2TjemB-hq4aSirs0"/>
+<div class="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors"></div>
+</div>
+<!-- Bio Content -->
+<div class="w-full md:w-2/3 space-y-6">
+<span class="manrope text-xs tracking-[0.3em] uppercase text-primary font-bold">Featured Resident</span>
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface leading-none group-hover:text-primary transition-colors">
+                        {{ poet.name }}
+                    </h3>
+<div class="font-label text-xl leading-relaxed text-on-surface-variant italic border-l-2 border-primary/10 pl-8 py-2">
+                        "{{ poet.bio|truncatewords:20 }}"
+                    </div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 manrope text-sm tracking-widest uppercase font-bold text-on-surface group/link" href="{% url 'poet_detail' poet.slug %}">
+<span class="pb-1 border-b border-on-surface/20 group-hover/link:border-primary transition-colors">View Verses</span>
+<span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Background Ghost Element for Asymmetry -->
+<div class="hidden md:block absolute -right-24 top-1/2 -translate-y-1/2 opacity-[0.03] select-none pointer-events-none">
+<span class="font-headline text-[12rem] whitespace-nowrap">{{ poet.name|slice:":1" }}</span>
+</div>
+</article>
+            {% empty %}
+            <!-- Fallback Mock Data for UI demonstration -->
+<article class="group relative flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-1/3 aspect-[4/5] overflow-hidden bg-surface-container relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="Elena Thorne" class="w-full h-full object-cover mix-blend-multiply opacity-90 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Ethereal portrait of a woman with braided hair sitting in a sun-drenched library, surrounded by old leather-bound books and dust motes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJTMidyqVCGL6ICAM0IfJ2tuD2GeCBGL5q--P-tpxCSwJkQygyqkkQf7_Qy7q4IJOEXt0oVi8M3hXrmWrX_ALyHy2iWgKk2hgIs9MQafihPxDqezmhFVj6n-7bo9BZqa36TKy8Nr-7WU3fgfd9ZwyQGJDqcYf5ZrhC1aVIluw56gQyMvXkL-kH5vZZbKOFxIsqTHMLGu4IGYdL9HSp5ME2hDCdMvJ16Rjz6g1KKKrMM-xP6qSjBrsPYDlTazk79hjPWTt7nrXvGQA"/>
+</div>
+<div class="w-full md:w-2/3 space-y-6">
+<span class="manrope text-xs tracking-[0.3em] uppercase text-primary font-bold">The Lyricist</span>
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface leading-none group-hover:text-primary transition-colors">
+                        Elena Thorne
+                    </h3>
+<div class="font-label text-xl leading-relaxed text-on-surface-variant italic border-l-2 border-primary/10 pl-8 py-2">
+                        "Weaving the silence of ancient forests into contemporary whispers, exploring the intersection of natural decay and digital rebirth through verse."
+                    </div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 manrope text-sm tracking-widest uppercase font-bold text-on-surface group/link" href="#">
+<span class="pb-1 border-b border-on-surface/20 group-hover/link:border-primary transition-colors">View Verses</span>
+<span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<article class="group relative flex flex-col md:flex-row-reverse gap-12 items-center">
+<div class="w-full md:w-1/3 aspect-[4/5] overflow-hidden bg-surface-container relative transition-transform duration-700 group-hover:scale-[1.02]">
+<img alt="Julian Vane" class="w-full h-full object-cover mix-blend-multiply opacity-90 grayscale hover:grayscale-0 transition-all duration-1000" data-alt="Distinguished gentleman in a charcoal overcoat standing on a foggy London street at night, illuminated by a warm street lamp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMSolv2Wf_npgilyPdMDZWqUYmtGYdNAVYJgq0p7dZmBHeXsswLpX8ziDVJu1ASSSE0WWcSoh7TykTmbh6_o4xAo9Vuib2eMVNXWKWLHb-Y2Vn6H8OthGjjO4_oUf4zOyEVyOMc0-bBwHKKjXfpV7r6HPcvq8n65wXlqiRgaLized35VhqTm5z2fgdcXiV5bi06QRr3HsHBFNg51Eo2DdVfLhKHzUyx2GIcO3OYcFHv9e3RPzGQ031EMCmD9GgWCgilGHelFWcVU"/>
+</div>
+<div class="w-full md:w-2/3 space-y-6 text-left md:text-right">
+<span class="manrope text-xs tracking-[0.3em] uppercase text-primary font-bold">The Architect</span>
+<h3 class="font-headline text-4xl md:text-5xl text-on-surface leading-none group-hover:text-primary transition-colors">
+                        Julian Vane
+                    </h3>
+<div class="font-label text-xl leading-relaxed text-on-surface-variant italic border-r-2 md:border-l-0 border-primary/10 pr-8 md:pl-0 md:pr-0 md:border-r-0 md:border-l-2 md:pl-8 py-2">
+                        "Structuring chaos into rhythmic masonry. His work examines the brutalist lines of modern cities and the soft curves of human longing."
+                    </div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-3 manrope text-sm tracking-widest uppercase font-bold text-on-surface group/link" href="#">
+<span class="pb-1 border-b border-on-surface/20 group-hover/link:border-primary transition-colors">View Verses</span>
+<span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+            {% endfor %}
+
+        </div>
+<!-- Featured Quote / Cinematic Scroller -->
+<section class="mt-48 relative h-[530px] flex items-center justify-center overflow-hidden bg-[#1d1b16]">
+<div class="absolute inset-0 opacity-40">
+<img alt="Inked background" class="w-full h-full object-cover" data-alt="Close-up of a vintage fountain pen nib touching parchment paper with a blooming ink stain spreading in slow motion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_SIILxHt9u7zNVQwffs2IpznGyvVgYULGQe0vJYlBtsFV0KH7qjAhMPU90rlRN3Y0qfn0IbYTem15bSFMpIJhyZknrLR2g9ASRdsjV_mASQwBKqJBu1iXTqK61eTSeTTvy1XPo6JOGiC45_ClVAACrFdFGOyzSdtikquPNZzBZ9Q_aEoFEuevHd7ApeSmvf5mwKNF9Fld4ZauDA35-iFAMhEjigBXoFzD813HhdevDaB8aMc02oa4KXMVDvJUBhYGZZqDkaxITX0"/>
+</div>
+<div class="relative z-10 text-center px-6">
+<h4 class="font-headline text-4xl md:text-6xl text-[#fff9ef] italic mb-8 max-w-3xl mx-auto leading-tight">
+                    "Poetry is the shadow cast by our streetlight imaginations."
+                </h4>
+<p class="manrope text-xs tracking-[0.4em] uppercase text-[#eab77a]">The Monolith Collective</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 mt-24 bg-[#f9f3ea] dark:bg-[#151411] border-t border-[#7c5454]/10 flex flex-col md:flex-row justify-between items-center px-12 gap-8">
+<div class="font-['Manrope'] text-sm tracking-widest uppercase text-[#1d1b16]/40 dark:text-[#fff9ef]/40">
+            © 2024 The Poetic Monolith. All rights reserved.
+        </div>
+<nav class="flex gap-12 manrope text-sm tracking-widest uppercase font-medium">
+<a class="text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] dark:hover:text-[#eab77a] transition-opacity duration-300" href="#">Archives</a>
+<a class="text-[#7c5454] font-bold" href="#">The Philosophy</a>
+<a class="text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] dark:hover:text-[#eab77a] transition-opacity duration-300" href="#">Contact</a>
+<a class="text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] dark:hover:text-[#eab77a] transition-opacity duration-300" href="#">Submit</a>
+</nav>
+</footer>
+</body></html>

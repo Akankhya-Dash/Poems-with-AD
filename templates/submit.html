@@ -113,7 +113,7 @@
 <nav class="hidden md:flex gap-8 font-label text-sm uppercase tracking-widest text-[#1d1b16]/60">
 <a class="hover:text-[#7c5454] transition-colors duration-500" href="#">Archives</a>
 <a class="hover:text-[#7c5454] transition-colors duration-500" href="#">Poets</a>
-<a class="text-[#7c5454] font-bold underline decoration-1 underline-offset-8" href="#">Submit</a>
+<a class="text-[#7c5454] font-bold underline decoration-1 underline-offset-8" href="{% url 'submit' %}">Submit</a>
 </nav>
 <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/20">
 <img alt="User Profile" class="w-full h-full object-cover" data-alt="close up portrait of a young man with a contemplative expression in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6nJIUS4qrldlY5LCNhfB12uHSyx7VjsoXrQ2j6gTFT3FnpIUVhtW3I6Ua4lFkerO49TpHb4l8hXWNdOf44PKTxCHxiQIqiTFD0-ExhM4umKWlgQl9HnyahH6RJYDW-3QkkTvsEDQUb4r3nv27j0i7vlbycHvn9F1OGrIBMOL98fX9Z_Tj1QutRbWlDa5Dh7AJ0BzYRjTkfWV4OzP7pqro-IX6nLYIWWtk_fU82g3IkiKqSG7uPkfUDl0hK3PAvZ9x28CnfW_EQA"/>
@@ -137,8 +137,9 @@
 <!-- Submission Form Card -->
 <section class="w-full bg-surface-container-lowest p-8 md:p-16 rounded-sm manuscript-shadow relative overflow-hidden">
 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#7c5454]/20 to-transparent"></div>
-<form class="space-y-12" enctype="multipart/form-data" method="POST">
+<form class="space-y-12" enctype="multipart/form-data" method="POST" action="{% url 'submit' %}">
 <!-- {% csrf_token %} -->
+ {% csrf_token %}
 <!-- Title Field -->
 <div class="space-y-2 group">
 <label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">Title of the Verse</label>
@@ -153,20 +154,16 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <!-- Mood Dropdown -->
 <div class="space-y-2 group">
-<label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">The Resonance (Mood)</label>
-<select class="w-full bg-transparent border-t-0 border-x-0 border-b silk-border py-4 font-label text-sm focus:ring-0 focus:border-[#7c5454] appearance-none" name="mood">
-<option value="melancholy">Melancholy</option>
-<option value="euphoria">Euphoria</option>
-<option value="solitude">Solitude</option>
-<option value="longing">Longing</option>
-<option value="serenity">Serenity</option>
-</select>
+  <label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">
+    The Resonance (Mood)
+  </label>
+
+  {{ form.mood }}
 </div>
 <!-- Image Upload -->
 <div class="space-y-2 group">
 <label class="block font-label text-xs uppercase tracking-[0.2em] text-on-surface-variant/60 group-focus-within:text-[#7c5454] transition-colors">Visual Companion (Optional)</label>
 <div class="relative w-full border-b silk-border py-4">
-<input class="absolute inset-0 opacity-0 cursor-pointer z-10" id="id_image" name="image" type="file"/>
 <div class="flex items-center justify-between text-on-surface-variant/60 italic font-label text-sm">
 <span>Choose a fragment of imagery...</span>
 <span class="material-symbols-outlined text-sm" data-icon="image">image</span>

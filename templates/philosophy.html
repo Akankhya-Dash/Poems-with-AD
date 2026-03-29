@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Philosophy | Nocturne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Sora:wght@300;400;600&amp;family=Literata:ital,wght@0,300;1,300&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#fd795a",
+              "on-error": "#fff7f6",
+              "secondary-container": "#fcddbd",
+              "surface-tint": "#80571f",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#f6ffbc",
+              "on-tertiary-container": "#5a612e",
+              "error-dim": "#791903",
+              "on-primary": "#fff7f3",
+              "secondary-dim": "#654f36",
+              "primary": "#80571f",
+              "tertiary-dim": "#505725",
+              "surface-bright": "#fff8f4",
+              "surface": "#fff8f4",
+              "secondary-fixed-dim": "#edcfaf",
+              "inverse-primary": "#fcc582",
+              "error": "#a73b21",
+              "primary-dim": "#724b14",
+              "outline-variant": "#bfafa0",
+              "on-secondary-fixed": "#4f3c24",
+              "on-tertiary-fixed-variant": "#656c38",
+              "on-primary-fixed": "#492c00",
+              "on-secondary-container": "#634e35",
+              "on-error-container": "#6e1400",
+              "tertiary-fixed-dim": "#e6eead",
+              "inverse-on-surface": "#a59b92",
+              "secondary-fixed": "#fcddbd",
+              "surface-dim": "#e9d7c6",
+              "on-background": "#3b3125",
+              "tertiary": "#5c6330",
+              "surface-container-high": "#f6e5d7",
+              "inverse-surface": "#120d08",
+              "on-secondary": "#fff7f3",
+              "tertiary-container": "#f4fcba",
+              "on-secondary-fixed-variant": "#6e583e",
+              "on-primary-container": "#623e06",
+              "surface-container-highest": "#f1e0cf",
+              "secondary": "#715b41",
+              "primary-dim": "#724b14",
+              "on-surface-variant": "#6a5d50",
+              "primary-fixed": "#fcc582",
+              "primary-container": "#fcc582",
+              "outline": "#86786a",
+              "on-tertiary-fixed": "#484f1e",
+              "surface-container": "#fbebdd",
+              "on-surface": "#3b3125",
+              "surface-variant": "#f1e0cf",
+              "tertiary-fixed": "#f4fcba",
+              "background": "#fff8f4",
+              "on-primary-fixed-variant": "#6d470f",
+              "surface-container-low": "#fff1e5"
+            },
+            fontFamily: {
+              "headline": ["Eb Garamond", "serif"],
+              "body": ["Sora", "sans-serif"],
+              "label": ["Literata", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            background-color: #fff9ef;
+            color: #1d1b16;
+            line-height: 1.8;
+        }
+        .text-wrap-balance {
+            text-wrap: balance;
+        }
+        .manuscript-glow {
+            box-shadow: 0 0 40px 10px rgba(124, 84, 84, 0.03);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-stone-950/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(29,27,22,0.05)]">
+<div class="flex justify-between items-center px-8 py-6 max-w-none">
+<div class="flex items-center gap-4">
+<button class="text-[#7c5454] dark:text-[#eab77a] hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<a class="font-serif italic text-3xl tracking-tight text-[#7c5454] dark:text-[#eab77a]" href="/">Nocturne</a>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex gap-8 text-[11px] font-sans uppercase tracking-widest text-[#1d1b16]/60">
+<a class="hover:text-[#7c5454] transition-colors" href="#">Archives</a>
+<a class="text-[#7c5454] font-semibold" href="#">Philosophy</a>
+</div>
+<button class="text-[#7c5454] dark:text-[#eab77a]">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-40 pb-32">
+<div class="max-w-[1200px] mx-auto px-6">
+<!-- Hero Header Section -->
+<header class="text-center mb-24">
+<p class="font-label italic text-primary mb-6 tracking-wide">The Foundation</p>
+<h1 class="font-headline text-6xl md:text-8xl text-on-surface mb-8 tracking-tighter text-wrap-balance leading-tight">
+                    The Nocturne Manifesto
+                </h1>
+<p class="font-headline italic text-2xl md:text-3xl text-on-surface-variant max-w-2xl mx-auto">
+                    "Why we write in the quiet."
+                </p>
+</header>
+<!-- Decorative Image / Cinematic Scroller -->
+<div class="w-full h-[442px] mb-24 overflow-hidden rounded-sm manuscript-glow">
+<img alt="Close-up of vintage parchment paper with elegant ink strokes and a soft shadow cast by a window" class="w-full h-full object-cover grayscale-[20%] opacity-90" data-alt="Close-up of artisan handmade paper with tactile grain texture and subtle ink droplets in warm golden hour lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUa-WVra9AekORz5nnLoscwUiFOLzD1ZD4LfPvvTmzUYBI8jKxNY4S1TEgjLjITPapt_PlBsv5AobKqHSjKksbPYRefqHe34NVbdM2msxhNOK_P0U6uXF7NNnL1A8SovOSNMl2jHAKTMeoBZbs9iZtn6nphyhUxVcigWugUWWBtcQ2Faphu9ghNzf5qg2BnGEXgiAL61c_dQet5J4BNoZw3S10eZXIaCGK0BK3dKP30XRGz46EvkhKELXRTtUamvrLtE5aXsOnPKo"/>
+</div>
+<!-- Content Section -->
+<article class="max-w-[640px] mx-auto">
+<div class="space-y-12 font-headline text-xl md:text-2xl text-on-surface leading-relaxed">
+<p class="first-letter:text-7xl first-letter:font-headline first-letter:float-left first-letter:mr-4 first-letter:text-primary">
+                        In an era of relentless noise, where the digital pulse never slows, we seek the sanctuary of the silent page. We believe that poetry is not merely a collection of words, but a method of breathing—a rhythmic intentionality that requires space to exist.
+                    </p>
+<p>
+                        Our philosophy, which we call <span class="italic text-primary">Silk &amp; Ink</span>, is rooted in the tactile and the timeless. We reject the algorithmic demand for "content" in favor of the human necessity for "meaning." Here, we do not scroll; we dwell. We do not skim; we inhabit.
+                    </p>
+<!-- Decorative Divider -->
+<div class="py-12 flex justify-center items-center gap-6">
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+<span class="material-symbols-outlined text-primary/40" data-icon="auto_stories">auto_stories</span>
+<div class="h-[1px] w-12 bg-outline-variant/30"></div>
+</div>
+<p>
+                        Reading, in its highest form, is a private conversation between two souls across time and geography. Nocturne exists to preserve the sanctity of that dialogue. By stripping away the frantic notifications and high-contrast distractions of the modern web, we return to the monastery of the mind.
+                    </p>
+<blockquote class="my-20 text-center">
+<p class="font-headline italic text-3xl text-primary leading-snug">
+                            "The wound is the place where the Light enters you."
+                        </p>
+<footer class="mt-4 font-label text-sm uppercase tracking-[0.3em] text-on-surface-variant">— Rumi</footer>
+</blockquote>
+<p>
+                        We invite you to write slowly. To allow your ink to dry before moving to the next thought. To celebrate the shadow as much as the light. In the quiet of the nocturne, we find the truths that the daylight obscures.
+                    </p>
+<div class="pt-12">
+<a class="inline-flex items-center gap-4 group" href="#">
+<span class="w-12 h-[1px] bg-primary group-hover:w-16 transition-all duration-500"></span>
+<span class="font-label text-sm uppercase tracking-widest text-primary">Join the silence</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Bottom Asymmetric Grid -->
+<section class="mt-40 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-7 bg-surface-container-low p-12 manuscript-glow">
+<h3 class="font-headline text-4xl mb-6">Slow Reading</h3>
+<p class="font-body text-sm text-on-surface-variant leading-loose uppercase tracking-wide">
+                        We prioritize the editorial experience. Our layout adapts to the poem, giving every verse the margin it deserves. There are no borders here, only the soft edges of thought.
+                    </p>
+</div>
+<div class="md:col-span-4 md:col-start-9">
+<img alt="A solitary candle burning on a wooden desk next to an open notebook" class="w-full aspect-[3/4] object-cover grayscale" data-alt="Moody still life of an antique fountain pen resting on a leather-bound journal in soft candlelight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpDOYTfNMJJ0BYMYK3D2cXdnVpqQZabYzoieZWl0yUxU2vEJAPBgegwS_oloHEbOIuaYLtO5rcGnRIYmpcRRYGQ1Pt6KTwnttX5F3aK4Qyc8eZ_9pXr-9en_cru_JlAiwDIobZIwQzG4hpB-pQJASygJ2R1cPScqF_vgvDLlQrM1I363NHCDrrrWzZxFPbJJF66yH-oepuIyurjuSsU5DbeV3u1Btpuyg_K7WBk-whDRxxcru7vsZWVn9ua0R-V1-RJyUhSFrY4Sw"/>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 mt-auto bg-[#f9f3ea] dark:bg-stone-900 border-t border-[#1d1b16]/5 dark:border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-serif italic text-lg text-[#1d1b16] dark:text-stone-200">
+                Nocturne Manuscript
+            </div>
+<div class="flex gap-12 text-[10px] font-sans uppercase tracking-[0.2em]">
+<a class="text-[#7c5454] dark:text-[#eab77a] border-b border-[#7c5454] opacity-80 hover:opacity-100 transition-all duration-700" href="#">Philosophy</a>
+<a class="text-[#1d1b16]/40 dark:text-stone-500 hover:text-[#1d1b16] dark:hover:text-stone-100 transition-all duration-700" href="#">Archives</a>
+<a class="text-[#1d1b16]/40 dark:text-stone-500 hover:text-[#1d1b16] dark:hover:text-stone-100 transition-all duration-700" href="#">Contact</a>
+</div>
+<div class="text-[10px] font-sans uppercase tracking-[0.2em] text-[#1d1b16]/40">
+                © Nocturne Manuscript. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

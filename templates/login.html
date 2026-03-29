@@ -109,11 +109,12 @@
 </div>
 <div class="bg-surface-container-lowest/40 backdrop-blur-md p-10 md:p-14 shadow-[0_32px_64px_-12px_rgba(29,27,22,0.08)] relative overflow-hidden">
 <div class="absolute top-0 left-0 w-1 h-full bg-primary/20"></div>
-<form action="#" class="space-y-10" method="POST">
+<form action="{% url 'login' %}" class="space-y-10" method="POST">
+    {% csrf_token %}
 <div class="space-y-8">
 <div class="flex flex-col gap-2">
 <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Email Address</label>
-<input class="ghost-border-input w-full py-3 italic text-on-surface placeholder:text-on-surface-variant/40" name="email" placeholder="Your ink here..." type="email"/>
+<input class="ghost-border-input w-full py-3 italic text-on-surface placeholder:text-on-surface-variant/40" name="username" placeholder="the.poet@poemsWithAd.com" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Passage Key</label>
@@ -125,7 +126,7 @@
 <input class="w-4 h-4 rounded-sm border-outline-variant text-primary focus:ring-primary/20 bg-transparent" type="checkbox"/>
 <span class="font-label text-xs text-on-surface-variant group-hover:text-primary transition-colors">Keep the candle lit</span>
 </label>
-<a class="font-label text-xs text-on-surface-variant hover:text-primary transition-colors" href="#">Forgot key?</a>
+<a class="font-label text-xs text-on-surface-variant hover:text-primary transition-colors" href="{% url 'password_reset' %}">Forgot key?</a>
 </div>
 <button class="w-full bg-primary text-on-primary py-4 font-label tracking-widest uppercase text-sm rounded-sm hover:opacity-90 active:scale-[0.98] transition-all shadow-sm" type="submit">
                     Enter your Journey
@@ -134,7 +135,7 @@
 <div class="mt-12 text-center">
 <p class="text-on-surface-variant text-sm font-body">
                     A new traveler? 
-                    <a class="text-primary font-bold ml-2 underline underline-offset-8 decoration-primary/30 hover:decoration-primary transition-all" href="#">Join the circle</a>
+                    <a class="text-primary font-bold ml-2 underline underline-offset-8 decoration-primary/30 hover:decoration-primary transition-all" href="{% url 'signup' %}">Join the circle</a>
 </p>
 </div>
 </div>

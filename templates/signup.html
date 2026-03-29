@@ -138,37 +138,51 @@
 </div>
 <!-- Card Structure -->
 <div class="bg-surface-container-lowest/40 backdrop-blur-xl p-10 md:p-14 shadow-[0_32px_64px_-12px_rgba(29,27,22,0.08)]">
-<form class="poetry-form" method="post">
-<!-- Django template representation -->
-<div class="space-y-2">
-<!-- Mocking {{ form.as_p }} logic for visual design -->
-<p>
-<label for="id_username">Username</label>
-<input id="id_username" name="username" placeholder="e.g. rumi_verses" type="text"/>
-</p>
-<p>
-<label for="id_email">Email</label>
-<input id="id_email" name="email" placeholder="heart@nocturne.com" type="email"/>
-</p>
-<p>
-<label for="id_password">Password</label>
-<input id="id_password" name="password" placeholder="••••••••" type="password"/>
-</p>
-<p>
-<label for="id_confirm">Confirm Password</label>
-<input id="id_confirm" name="confirm" placeholder="••••••••" type="password"/>
-</p>
-</div>
-<div class="mt-12 flex flex-col items-center gap-8">
-<button class="w-full bg-[#7c5454] text-white py-5 font-headline text-xl italic tracking-wide hover:bg-[#684646] transition-all active:scale-[0.98] shadow-sm" type="submit">
-                            Create Account
-                        </button>
-<div class="flex flex-col items-center gap-2">
-<span class="text-[10px] uppercase tracking-[0.2em] text-outline italic">The path ahead is clear.</span>
-<a class="font-label text-on-surface italic hover:text-[#7c5454] transition-colors border-b border-outline/20 pb-0.5" href="/login">
-                                Already a traveler? Sign in
-                            </a>
-</div>
+<form class="poetry-form" method="POST" action="{% url 'signup' %}">
+    {% csrf_token %}
+
+    <div class="space-y-2">
+
+        <p>
+            <label for="id_username">Username</label>
+            <input id="id_username" name="username" type="text" placeholder="e.g. rumi_verses"/>
+        </p>
+
+        <p>
+            <label for="id_email">Email</label>
+            <input id="id_email" name="email" type="email" placeholder="heart@nocturne.com"/>
+        </p>
+
+        <p>
+            <label for="id_password1">Password</label>
+            <input id="id_password1" name="password1" type="password" placeholder="••••••••"/>
+        </p>
+
+        <p>
+            <label for="id_password2">Confirm Password</label>
+            <input id="id_password2" name="password2" type="password" placeholder="••••••••"/>
+        </p>
+
+    </div>
+
+    <div class="mt-12 flex flex-col items-center gap-8">
+        <button type="submit"
+            class="w-full bg-[#7c5454] text-white py-5 font-headline text-xl italic tracking-wide hover:bg-[#684646] transition-all active:scale-[0.98] shadow-sm">
+            Create Account
+        </button>
+
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-outline italic">
+                The path ahead is clear.
+            </span>
+
+            <a href="{% url 'login' %}"
+               class="font-label text-on-surface italic hover:text-[#7c5454] transition-colors border-b border-outline/20 pb-0.5">
+                Already a traveler? Sign in
+            </a>
+        </div>
+    </div>
+</form>
 </div>
 </form>
 </div>

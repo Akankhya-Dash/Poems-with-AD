@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Curations | Nocturne</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;family=Sora:wght@100..800&amp;family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#4f3c24",
+              "secondary": "#715b41",
+              "surface-container-low": "#fff1e5",
+              "on-error-container": "#6e1400",
+              "on-primary-container": "#623e06",
+              "surface-tint": "#80571f",
+              "outline": "#86786a",
+              "surface-variant": "#f1e0cf",
+              "tertiary-fixed-dim": "#e6eead",
+              "surface-dim": "#e9d7c6",
+              "background": "#fff8f4",
+              "surface-container-highest": "#f1e0cf",
+              "on-error": "#fff7f6",
+              "secondary-container": "#fcddbd",
+              "surface": "#fff8f4",
+              "primary-fixed": "#fcc582",
+              "surface-container-high": "#f6e5d7",
+              "on-secondary-fixed-variant": "#6e583e",
+              "primary-fixed-dim": "#edb776",
+              "on-tertiary-fixed-variant": "#656c38",
+              "error": "#a73b21",
+              "primary-dim": "#724b14",
+              "on-background": "#3b3125",
+              "on-primary-fixed-variant": "#6d470f",
+              "secondary-dim": "#654f36",
+              "on-primary-fixed": "#492c00",
+              "error-container": "#fd795a",
+              "on-surface": "#3b3125",
+              "on-secondary": "#fff7f3",
+              "surface-bright": "#fff8f4",
+              "primary": "#80571f",
+              "tertiary-fixed": "#f4fcba",
+              "on-secondary-container": "#634e35",
+              "error-dim": "#791903",
+              "tertiary-container": "#f4fcba",
+              "on-surface-variant": "#6a5d50",
+              "tertiary-dim": "#505725",
+              "primary-container": "#fcc582",
+              "inverse-on-surface": "#a59b92",
+              "inverse-primary": "#fcc582",
+              "inverse-surface": "#120d08",
+              "outline-variant": "#bfafa0",
+              "surface-container-lowest": "#ffffff",
+              "secondary-fixed": "#fcddbd",
+              "secondary-fixed-dim": "#edcfaf",
+              "on-primary": "#fff7f3",
+              "on-tertiary": "#f6ffbc",
+              "tertiary": "#5c6330",
+              "on-tertiary-container": "#5a612e",
+              "surface-container": "#fbebdd",
+              "on-tertiary-fixed": "#484f1e"
+            },
+            fontFamily: {
+              "headline": ["EB Garamond", "serif"],
+              "body": ["Sora", "sans-serif"],
+              "label": ["Literata", "serif"],
+              "manrope": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+      }
+      .book-layout {
+        max-width: 840px;
+        margin: 0 auto;
+      }
+      .cinematic-mask {
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      }
+      body {
+        background-color: #f5efe6; /* Silk & Ink base overlaying system background */
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface font-body selection:bg-primary/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(29,27,22,0.05)]">
+<nav class="flex items-center justify-between px-8 py-6 max-w-none w-full">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-[#7c5454] dark:text-[#eab77a] cursor-pointer" data-icon="menu">menu</span>
+</div>
+<div class="text-3xl font-medium tracking-tighter text-[#7c5454] dark:text-[#eab77a] font-headline">
+                Nocturne
+            </div>
+<div class="flex items-center space-x-6">
+<div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-manrope">
+<a class="text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-colors duration-300" href="#">Archives</a>
+<a class="text-[#7c5454] dark:text-[#eab77a] border-b border-[#7c5454]" href="#">Curations</a>
+<a class="text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-colors duration-300" href="#">Journal</a>
+</div>
+<span class="material-symbols-outlined text-[#7c5454] dark:text-[#eab77a] cursor-pointer" data-icon="search">search</span>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-20 px-6">
+<!-- Hero Section -->
+<section class="book-layout text-center mb-32">
+<h1 class="font-headline text-5xl md:text-7xl text-primary mb-6 italic tracking-tight">The Curated Echo</h1>
+<p class="font-label text-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+                A sanctuary for the written word. Hand-selected verses organized by mood, season, and the quiet movements of the soul.
+            </p>
+<div class="mt-12 h-px w-24 bg-outline-variant/30 mx-auto"></div>
+</section>
+<!-- Featured Collection (Asymmetric Layout) -->
+<section class="book-layout mb-40">
+<div class="grid md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-7">
+<div class="relative group overflow-hidden bg-surface-container-low p-4">
+<img alt="Collection Cover" class="w-full h-[500px] object-cover filter grayscale opacity-90 group-hover:opacity-100 transition-opacity duration-700" data-alt="Monochrome close-up of an ancient leather-bound book with yellowed pages resting on a rustic wooden desk with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-EM2VN02tvJqn75Bx8cJfsNn4yZr5VtHm1Aw3WrreggBA-oY2snDzYojHdUkGO--PbUBFaDeFn4876TFN4HCuvSjM-kh4-0IbmV5W6KdLSQ95GPzlNJwjiFEzkNfJ8a2wsB4e506UTdu8HLdYmBNVikidfrYDO0JMky2drI6thhd7uzEcTbelF1iL7_MYde6AorO_QvZxbjHfuEinQIvUF4J0xdzg0qoiQ2p7kmLurB9heL3nTTkDOyD2RmbtjYo5Lb1WMMzOzEM"/>
+<div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
+</div>
+</div>
+<div class="md:col-span-5 md:-ml-20 z-10 bg-surface/90 backdrop-blur-sm p-8 md:p-12 shadow-sm border border-outline-variant/10">
+<span class="font-manrope text-xs uppercase tracking-widest text-primary mb-4 block">Featured Anthology</span>
+<h2 class="font-headline text-4xl mb-6">The Shadow of Rumi</h2>
+<p class="font-label text-on-surface-variant mb-8 leading-loose italic">
+                        "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it."
+                    </p>
+<div class="space-y-4">
+<a class="block group" href="#">
+<h4 class="font-manrope text-sm font-medium group-hover:text-primary transition-colors">The Guest House</h4>
+<div class="h-px w-0 group-hover:w-full bg-primary/30 transition-all duration-500 mt-1"></div>
+</a>
+<a class="block group" href="#">
+<h4 class="font-manrope text-sm font-medium group-hover:text-primary transition-colors">Only Breath</h4>
+<div class="h-px w-0 group-hover:w-full bg-primary/30 transition-all duration-500 mt-1"></div>
+</a>
+<a class="block group" href="#">
+<h4 class="font-manrope text-sm font-medium group-hover:text-primary transition-colors">The Love of Life</h4>
+<div class="h-px w-0 group-hover:w-full bg-primary/30 transition-all duration-500 mt-1"></div>
+</a>
+</div>
+<button class="mt-10 px-8 py-3 border border-outline-variant/40 font-headline italic hover:bg-primary hover:text-on-primary transition-all duration-300">Explore Collection</button>
+</div>
+</div>
+</section>
+<!-- Seasonal Verses Section -->
+<section class="book-layout mb-32">
+<div class="flex items-baseline justify-between mb-16">
+<h2 class="font-headline text-3xl italic">Seasonal Verses</h2>
+<div class="h-px flex-grow mx-8 bg-outline-variant/20"></div>
+<span class="font-manrope text-xs uppercase tracking-[0.2em] opacity-60">Autumn MMXXIV</span>
+</div>
+<div class="grid md:grid-cols-2 gap-24">
+<!-- Collection Item -->
+<div class="flex flex-col">
+<div class="aspect-[4/5] bg-surface-container-high mb-8 overflow-hidden">
+<img alt="Solitude in Autumn" class="w-full h-full object-cover grayscale contrast-125" data-alt="Muted tone photograph of a single withered leaf resting on a glass-like lake surface with soft morning fog in the background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWCzUUwXr-d3QcjNhHyXY-GcnyGz_xr2Tv6NacrCCuXYmbaejRX2EKmk1wt2gEmGavpUYyl6urTYxgoVOVPZCJC5ci8FvkbsA3wfYurpFL4Pti4aUha91hfJGejs8eqBTYGqBKeYD6poy5DwZ06EDqEWjgyI3_FBie9VYYUrO-bmp-ImA6x2F9ILYE44g373iAtkYxNxavZgIlJ0xnYDWFJeOIZD6krs_waP7up9peytTcCMv6FhmVc2urlnNzgDnBwoB8dL7_Ey8"/>
+</div>
+<h3 class="font-headline text-2xl mb-3">Solitude in Autumn</h3>
+<p class="font-label text-on-surface-variant text-sm mb-6 leading-relaxed">A gathering of verses celebrating the quiet transition of the earth and the shedding of old selves.</p>
+<div class="space-y-3 border-l border-outline-variant/30 pl-6">
+<a class="block font-manrope text-sm hover:text-primary transition-colors" href="#">When the Leaves Fall</a>
+<a class="block font-manrope text-sm hover:text-primary transition-colors" href="#">The Amber Hour</a>
+<a class="block font-manrope text-sm hover:text-primary transition-colors" href="#">Frost on the Glass</a>
+</div>
+</div>
+<!-- Collection Item -->
+<div class="flex flex-col md:mt-24">
+<div class="aspect-[4/5] bg-surface-container-high mb-8 overflow-hidden">
+<img alt="The Midnight Reader" class="w-full h-full object-cover grayscale brightness-75" data-alt="Deeply shadowed black and white photo of a flickering candle flame illuminating the edges of an open book in a dark room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1A7YD9z-DOGZi_fqT2ErseNOQwZnjElc6v_geyUYKWYm0Njwt2sqRY0VFSpVMwEDrcAvnBJ_j-F7NpEoUfEJwyd4Y4xT4pJPKvQbzYetuY80_7xe3ryqDA7_oSimcOFrsIFseVH_E7RL77v-HB0ReBsdu9jv8-GRufQRtj31wPgNZ8o1wWSwJpuh5BdFe1vESYb8Q8_kDaDe8gn28eierb3zGtLzluoGeVzDtNeTWBcKe4C8cHWboxQhKB-222qKjFfw1iUpFm2I"/>
+</div>
+<h3 class="font-headline text-2xl mb-3">The Midnight Reader</h3>
+<p class="font-label text-on-surface-variant text-sm mb-6 leading-relaxed">Words that find their meaning in the silence of the night. For the sleepless and the dreamers.</p>
+<div class="space-y-3 border-l border-outline-variant/30 pl-6">
+<a class="block font-manrope text-sm hover:text-primary transition-colors" href="#">Moonlight Sonata</a>
+<a class="block font-manrope text-sm hover:text-primary transition-colors" href="#">The Last Lantern</a>
+<a class="block font-manrope text-sm hover:text-primary transition-colors" href="#">Ink and Echoes</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Cinematic Scroller Quote -->
+<section class="w-full -mx-6 md:-mx-24 px-6 md:px-24 mb-40">
+<div class="relative h-[530px] flex items-center justify-center overflow-hidden">
+<img alt="Cinematic Background" class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 scale-110" data-alt="Wide cinematic shot of a misty forest with tall pines fading into a soft white haze, atmospheric and minimalist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVC3wKIWPoWc2CCyOS3qZV-Zrft_AucC2beex3sWaRNUOOln5uk6v2MtFQ538sOTPnr6rjQ8cQZFkK_C3_8ICLVnNOSSNatc5H6v4qvVuO6Izrxth6pdSRVpckwpDICNVYjuBDeLmvBL777oTGtrxxZvA3bYls_Hv4riaNSG7WNMDGpjM63YBkM_4uibv9r6HT6Pf65GH443SiTRxmtQ4v7CxRwuXqxLfOAUrFSJukEIFPdlKRZN5rQQpiseU5JI12fOMf8z6jAME"/>
+<div class="relative z-10 text-center max-w-3xl px-6">
+<blockquote class="font-headline text-4xl md:text-5xl italic text-primary leading-tight">
+                        "The world is a book and those who do not travel its verses read only one page."
+                    </blockquote>
+<cite class="block mt-8 font-manrope text-xs uppercase tracking-widest opacity-60">— Anonymous Traveler</cite>
+</div>
+</div>
+</section>
+<!-- Archive Grid (Bento Style) -->
+<section class="book-layout">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 bg-surface-container-low p-10 flex flex-col justify-end min-h-[300px]">
+<h3 class="font-headline text-xl mb-2">Vintage Sonnets</h3>
+<p class="font-manrope text-xs opacity-60 uppercase mb-4">Collection 04</p>
+<a class="text-primary font-headline italic border-b border-primary/20 w-max" href="#">View Archive</a>
+</div>
+<div class="md:col-span-1 bg-surface-container-high p-10 flex flex-col justify-end">
+<h3 class="font-headline text-xl mb-2">Haiku</h3>
+<p class="font-manrope text-xs opacity-60 uppercase mb-4">Brief Essence</p>
+<a class="text-primary font-headline italic border-b border-primary/20 w-max" href="#">View</a>
+</div>
+<div class="md:col-span-1 bg-secondary-container/20 p-10 flex flex-col justify-end">
+<h3 class="font-headline text-xl mb-2">Modernism</h3>
+<p class="font-manrope text-xs opacity-60 uppercase mb-4">Broken Forms</p>
+<a class="text-primary font-headline italic border-b border-primary/20 w-max" href="#">View</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 mt-32 px-12 bg-[#f9f3ea] dark:bg-[#1d1b16] flex flex-col items-center justify-center text-center space-y-8">
+<div class="bg-[#ede7de] dark:bg-[#2d2a24] h-[1px] w-1/3 mx-auto mb-12"></div>
+<div class="font-['EB_Garamond'] italic text-2xl text-[#7c5454] dark:text-[#eab77a]">
+            Nocturne
+        </div>
+<nav class="flex flex-wrap justify-center gap-8 md:gap-12">
+<a class="font-manrope text-sm uppercase tracking-widest leading-relaxed text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] underline decoration-from-font underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Archives</a>
+<a class="font-manrope text-sm uppercase tracking-widest leading-relaxed text-[#1d1b16] dark:text-[#fff9ef] font-semibold hover:text-[#7c5454] underline decoration-from-font underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">The Poet's Path</a>
+<a class="font-manrope text-sm uppercase tracking-widest leading-relaxed text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] underline decoration-from-font underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Privacy</a>
+<a class="font-manrope text-sm uppercase tracking-widest leading-relaxed text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] underline decoration-from-font underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Colophon</a>
+</nav>
+<p class="font-manrope text-[10px] uppercase tracking-[0.3em] text-[#1d1b16]/30 dark:text-[#fff9ef]/30 mt-12">
+            © 2024 Nocturne. Printed in Silk &amp; Ink.
+        </p>
+</footer>
+</body></html>

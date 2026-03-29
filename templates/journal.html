@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Journal - Silk &amp; Ink</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Sora:wght@100..800&amp;family=Literata:ital,wght@0,200..900;1,200..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#edb776",
+                        "surface-container-low": "#fff1e5",
+                        "secondary": "#715b41",
+                        "on-surface-variant": "#6a5d50",
+                        "on-secondary-container": "#634e35",
+                        "primary-dim": "#724b14",
+                        "primary-fixed": "#fcc582",
+                        "on-surface": "#3b3125",
+                        "primary": "#80571f",
+                        "error": "#a73b21",
+                        "on-error": "#fff7f6",
+                        "secondary-fixed-dim": "#edcfaf",
+                        "tertiary": "#5c6330",
+                        "surface-container-high": "#f6e5d7",
+                        "inverse-surface": "#120d08",
+                        "background": "#fff8f4",
+                        "surface-container-highest": "#f1e0cf",
+                        "surface-tint": "#80571f",
+                        "on-tertiary-fixed-variant": "#656c38",
+                        "on-primary-fixed-variant": "#6d470f",
+                        "on-secondary-fixed-variant": "#6e583e",
+                        "secondary-container": "#fcddbd",
+                        "inverse-on-surface": "#a59b92",
+                        "outline-variant": "#bfafa0",
+                        "surface-dim": "#e9d7c6",
+                        "surface-variant": "#f1e0cf",
+                        "tertiary-fixed-dim": "#e6eead",
+                        "on-background": "#3b3125",
+                        "on-primary": "#fff7f3",
+                        "surface-bright": "#fff8f4",
+                        "on-tertiary-container": "#5a612e",
+                        "error-container": "#fd795a",
+                        "secondary-dim": "#654f36",
+                        "primary-container": "#fcc582",
+                        "on-primary-container": "#623e06",
+                        "on-secondary-fixed": "#4f3c24",
+                        "surface": "#fff8f4",
+                        "secondary-fixed": "#fcddbd",
+                        "on-secondary": "#fff7f3",
+                        "error-dim": "#791903",
+                        "on-primary-fixed": "#492c00",
+                        "inverse-primary": "#fcc582",
+                        "on-tertiary-fixed": "#484f1e",
+                        "on-error-container": "#6e1400",
+                        "tertiary-container": "#f4fcba",
+                        "outline": "#86786a",
+                        "surface-container": "#fbebdd",
+                        "tertiary-dim": "#505725",
+                        "tertiary-fixed": "#f4fcba",
+                        "on-tertiary": "#f6ffbc",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Eb Garamond"],
+                        "body": ["Sora"],
+                        "label": ["Literata"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f4;
+            color: #3b3125;
+            font-family: 'Sora', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif-text { font-family: 'Eb Garamond', serif; }
+        .label-text { font-family: 'Literata', serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 backdrop-blur-xl transition-colors duration-500 shadow-[0_4px_30px_rgba(0,0,0,0.03)]">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#7c5454] hover:opacity-70 transition-opacity duration-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+<a class="font-serif italic text-2xl text-[#7c5454]" href="/">Silk &amp; Ink</a>
+<div class="flex items-center gap-4">
+<button class="text-[#7c5454] hover:opacity-70 transition-opacity duration-300 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-40 px-6">
+<div class="max-w-[600px] mx-auto">
+<!-- Page Header -->
+<header class="mb-24 text-center">
+<h1 class="font-headline text-6xl font-normal text-on-surface mb-4">The Journal</h1>
+<p class="font-headline italic text-xl text-on-surface-variant opacity-80">Reflections on the written word.</p>
+<div class="mt-12 w-12 h-[1px] bg-outline-variant/30 mx-auto"></div>
+</header>
+<!-- Journal List -->
+<section class="space-y-32">
+                {% for entry in journal_entries %}
+                <article class="group relative">
+<!-- Date Stamp -->
+<div class="mb-6">
+<span class="label-text text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60">
+                            {{ entry.created_at|date:"F d, Y" }}
+                        </span>
+</div>
+<!-- Optional Featured Image -->
+                    {% if entry.image %}
+                    <div class="mb-10 overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img alt="{{ entry.title }}" class="w-full h-full object-cover grayscale-[0.2] group-hover:scale-105 transition-transform duration-1000" data-alt="moody close-up of a vintage fountain pen resting on aged cream parchment paper with soft morning shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiKI2zxtnvJT-ikxZroPfOGTNv1p301HPPWblnci8D0AH-knQJq7ApaXfioQJS4GSgUbkdJVJANsFCVh83Efla6VF6homzwJ136OsvZzxnWlecw5qKER889Od677mu8iJsW9cK2L7Hz-4k_mMWl90SJj0loRlgwUP7fgj2zHV2YCDAGBj9piss5QQ9ZB4Yn0Z0YArPwXKcn7_sq6dUX-U6OMurOasajjW4cl-VGCOWHd38bFVW7gIwCZQiHDqHmUt_avKwtSRyS9E"/>
+</div>
+                    {% endif %}
+
+                    <!-- Content -->
+<div class="space-y-6">
+<h2 class="font-headline text-4xl leading-tight text-on-surface group-hover:text-primary transition-colors duration-500">
+<a href="{% url 'journal_detail' entry.slug %}">{{ entry.title }}</a>
+</h2>
+<div class="font-body text-lg leading-relaxed text-on-surface-variant opacity-90 font-light">
+                            {{ entry.content|truncatewords:40 }}
+                        </div>
+<div class="pt-4">
+<a class="font-headline italic text-lg text-primary border-b border-primary/20 hover:border-primary transition-all duration-300 pb-1" href="{% url 'journal_detail' entry.slug %}">
+                                Read Reflection
+                            </a>
+</div>
+</div>
+</article>
+                {% endfor %}
+
+                <!-- Fallback / Static Placeholder for Design demo -->
+<article class="group relative">
+<div class="mb-6">
+<span class="label-text text-[10px] uppercase tracking-[0.2em] text-on-surface-variant/60">
+                            October 24, 2023
+                        </span>
+</div>
+<div class="mb-10 overflow-hidden bg-surface-container-low aspect-[16/9]">
+<img alt="The Alchemy of Ink" class="w-full h-full object-cover grayscale-[0.3] group-hover:scale-105 transition-transform duration-1000" data-alt="blurred background of a classical library with dark wood shelves and a single warm lamp glowing on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGlHkxZZDlgRz4XH9nfT7yHNSPSzq5FiwAZtUv2sLNug87Ue-V8po2hfg8RWEfaJibz_yEeYfXz_Xje7EyuuQGZB_8bdeRKi66okDH6rddF8YxX5Ekn7aQkwUgAMEXwGAJhkXHzuXMt3Hc0epZyHLBnvKhDU4dMBEQH7OMkaCBulCB3hbxZVibUNUeUq9S0yLv3WojWkpIu3EBqdIaUdwUzGK1QBx1TYSMKY2z0vn1XJJscDTgkDW7lrjGnX2RZCuJ6YWDPIghxY8"/>
+</div>
+<div class="space-y-6">
+<h2 class="font-headline text-4xl leading-tight text-on-surface group-hover:text-primary transition-colors duration-500">
+                            The Alchemy of Ink and Silence
+                        </h2>
+<div class="font-body text-lg leading-relaxed text-on-surface-variant opacity-90 font-light">
+                            There is a specific weight to a pen before it touches paper—a gravity that carries the potential of every word ever spoken. In the quiet hours of the morning, we find that the ink does more than stain...
+                        </div>
+<div class="pt-4">
+<a class="font-headline italic text-lg text-primary border-b border-primary/20 hover:border-primary transition-all duration-300 pb-1" href="#">
+                                Read Reflection
+                            </a>
+</div>
+</div>
+</article>
+</section>
+<!-- Pagination or End of Manuscript -->
+<footer class="mt-40 text-center">
+<div class="inline-flex items-center gap-8 text-on-surface-variant/40">
+<div class="h-[1px] w-12 bg-outline-variant/20"></div>
+<span class="font-headline italic text-sm">Finis</span>
+<div class="h-[1px] w-12 bg-outline-variant/20"></div>
+</div>
+</footer>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only Logic) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center py-3 pb-safe px-4 bg-[#fff9ef]/80 backdrop-blur-xl z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+<a class="flex flex-col items-center justify-center text-[#7c5454] font-bold scale-110 transition-all duration-500 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="auto_stories">auto_stories</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] mt-1">Journal</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1b16]/40 hover:text-[#7c5454] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="history_edu">history_edu</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] mt-1">Poets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1b16]/40 hover:text-[#7c5454] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="local_library">local_library</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] mt-1">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#1d1b16]/40 hover:text-[#7c5454] transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person_2">person_2</span>
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] mt-1">Profile</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-[#f9f3ea]">
+<div class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 max-w-screen-xl mx-auto border-t border-[#1d1b16]/5 pt-12">
+<div class="font-serif text-lg text-[#7c5454]">Silk &amp; Ink</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-serif italic text-sm text-[#1d1b16]/70 no-underline hover:text-[#7c5454] transition-colors" href="#">Archives</a>
+<a class="font-serif italic text-sm text-[#1d1b16]/70 no-underline hover:text-[#7c5454] transition-colors" href="#">The Ethos</a>
+<a class="font-serif italic text-sm text-[#1d1b16]/70 no-underline hover:text-[#7c5454] transition-colors" href="#">Privacy</a>
+<a class="font-serif italic text-sm text-[#1d1b16]/70 no-underline hover:text-[#7c5454] transition-colors" href="#">Contact</a>
+</div>
+<div class="font-serif italic text-sm text-[#1d1b16]/70">
+                © 2024 Silk &amp; Ink. A Sanctuary for the Written Word.
+            </div>
+</div>
+</footer>
+</body></html>

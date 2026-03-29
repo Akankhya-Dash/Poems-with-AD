@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Nocturne | {{ poem.title }}</title>
+<title>Poems with AD | {{ poem.title }}</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Lora:ital,wght@0,400;0,500;1,400&amp;family=Inter:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -106,7 +106,7 @@
 <!-- Post-Poem Metadata -->
 <footer class="mt-32 pt-16 border-t border-outline-variant/60 text-center">
 <div class="font-headline italic text-2xl text-on-surface mb-3">
-                {{ poem.author.name|default:"Anonymous" }}
+                {{ poem.author.username|default:"Anonymous" }}
             </div>
 <p class="font-label text-[10px] uppercase tracking-[0.3em] text-on-surface-variant/50">
                 Published in Nocturne Vol. IV
