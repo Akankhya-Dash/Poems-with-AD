@@ -113,8 +113,8 @@
     {% csrf_token %}
 <div class="space-y-8">
 <div class="flex flex-col gap-2">
-<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Email Address</label>
-<input class="ghost-border-input w-full py-3 italic text-on-surface placeholder:text-on-surface-variant/40" name="username" placeholder="the.poet@poemsWithAd.com" type="text"/>
+<label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Username</label>
+<input class="ghost-border-input w-full py-3 italic text-on-surface placeholder:text-on-surface-variant/40" name="username" placeholder="the_lonely_poet" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant/60">Passage Key</label>
@@ -132,6 +132,7 @@
                     Enter your Journey
                 </button>
 </form>
+<input type="hidden" name="next" value="{{ next }}">
 <div class="mt-12 text-center">
 <p class="text-on-surface-variant text-sm font-body">
                     A new traveler? 

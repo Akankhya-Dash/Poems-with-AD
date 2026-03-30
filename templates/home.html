@@ -108,7 +108,16 @@
 </div>
 </div>
 <div class="flex items-center gap-6">
-<a class="font-['Manrope'] text-sm tracking-widest uppercase text-[#1d1b16]/70 hover:text-[#7c5454] transition-colors" href="{% url 'login' %}">Sign In</a>
+{% if user.is_authenticated %}
+  <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="font-['Manrope'] text-sm tracking-widest uppercase text-[#1d1b16]/70 hover:text-[#7c5454] transition-colors">
+      Log Out
+    </button>
+  </form>
+{% else %}
+  <a href="{% url 'login' %}" class="font-['Manrope'] text-sm tracking-widest uppercase text-[#1d1b16]/70 hover:text-[#7c5454] transition-colors">Sign In</a>
+{% endif %}
 <a href="{% url 'submit' %}"
    class="bg-[#7c5454] text-white px-6 py-2 rounded-sm font-['Manrope'] text-sm tracking-widest uppercase">
    Write a Verse
@@ -130,27 +139,30 @@
 </div>
 </section>
 <!-- Minimal Auth Card -->
-<section class="py-32 px-6 flex justify-center bg-surface-container-low">
-<div class="w-full max-w-md bg-white p-12 editorial-shadow">
-<h2 class="font-serif text-3xl mb-8 text-center text-[#1d1b16]">Return to your shelf</h2>
-<form class="space-y-6 font-sans text-sm">
-<!-- Django form variable placeholder -->
-<div class="space-y-4">
-<div class="border-b border-outline-variant/30 py-2">
-<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Username</label>
-<input class="w-full bg-transparent border-none p-0 focus:ring-0 italic text-lg" placeholder="the_lonely_poet" type="text"/>
-</div>
-<div class="border-b border-outline-variant/30 py-2">
-<label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Passphrase</label>
-<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg" placeholder="••••••••" type="password"/>
-</div>
-</div>
-<button class="w-full bg-[#7c5454] text-white py-4 font-['Manrope'] text-xs tracking-[0.3em] uppercase hover:bg-[#654343] transition-colors" type="submit">
-                        Enter The Sanctum
-                    </button>
-</form>
-</div>
+<!-- Minimal Auth Card -->
+{% if not user.is_authenticated %}
+<section id="auth" class="py-32 px-6 flex justify-center bg-surface-container-low">
+    <div class="w-full max-w-md bg-white p-12 editorial-shadow">
+        <h2 class="font-serif text-3xl mb-8 text-center text-[#1d1b16]">Return to your shelf</h2>
+        <form class="space-y-6 font-sans text-sm" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div class="space-y-4">
+                <div class="border-b border-outline-variant/30 py-2">
+                    <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Username</label>
+                    <input class="w-full bg-transparent border-none p-0 focus:ring-0 italic text-lg" name="username" placeholder="the_lonely_poet" type="text"/>
+                </div>
+                <div class="border-b border-outline-variant/30 py-2">
+                    <label class="block text-[10px] uppercase tracking-widest text-on-surface-variant mb-1">Passphrase</label>
+                    <input class="w-full bg-transparent border-none p-0 focus:ring-0 text-lg" name="password" placeholder="••••••••" type="password"/>
+                </div>
+            </div>
+            <button class="w-full bg-[#7c5454] text-white py-4 font-['Manrope'] text-xs tracking-[0.3em] uppercase hover:bg-[#654343] transition-colors" type="submit">
+                Enter The Sanctum
+            </button>
+        </form>
+    </div>
 </section>
+{% endif %}
 <!-- Mood Selection -->
 <section class="py-24 px-12 border-y border-[#1d1b16]/5">
 <div class="max-w-[1440px] mx-auto">

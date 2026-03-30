@@ -151,7 +151,13 @@
 </small>
 </div>
 <h2 class="font-headline text-5xl lg:text-6xl mb-6 leading-tight hover:italic transition-all duration-500">
-<a class="block" href="{% url 'poem_detail' poem.slug %}">
+{% if poem.slug %}
+    <a href="{% url 'poem_detail' poem.slug %}">
+        {{ poem.title }}
+    </a>
+{% else %}
+    <span>{{ poem.title }}</span>
+{% endif %}
                             {{ poem.title|default:"The Echo of Unspoken Vows" }}
                         </a>
 </h2>
@@ -181,7 +187,13 @@
 </small>
 </div>
 <h2 class="font-headline text-5xl lg:text-6xl mb-6 leading-tight hover:italic transition-all duration-500">
-<a class="block" href="{% url 'poem_detail' poem.slug %}">
+{% if poem.slug %}
+    <a href="{% url 'poem_detail' poem.slug %}">
+        {{ poem.title }}
+    </a>
+{% else %}
+    <span>{{ poem.title }}</span>
+{% endif %}
                             {{ poem.title|default:"Rain on the Copper Roof" }}
                         </a>
 </h2>
@@ -197,35 +209,6 @@
 </div>
 </article>
 <!-- Poem Entry 3 -->
-<article class="relative flex flex-col md:flex-row gap-12 group">
-<div class="w-full md:w-1/2 flex flex-col justify-center">
-<div class="mb-4">
-<small class="font-label text-xs tracking-[0.2em] uppercase text-outline">
-                            {{ poem.date_published|default:"December 24, 1892" }} · 
-                            <span class="text-primary italic">{{ poem.mood|default:"Wilderness" }}</span>
-</small>
-</div>
-<h2 class="font-headline text-5xl lg:text-6xl mb-6 leading-tight hover:italic transition-all duration-500">
-<a class="block" href="{% url 'poem_detail' poem.slug %}">
-                            {{ poem.title|default:"The Frost's First Breath" }}
-                        </a>
-</h2>
-<div class="font-headline text-xl lg:text-2xl leading-relaxed text-on-surface-variant max-w-prose">
-<p>{{ poem.content|default:"Winter arrived not with a roar, but with a sigh that crystallized the windowpane into lace, mapping territories of cold and silence..."|truncatewords:20 }}</p>
-</div>
-<div class="mt-8">
-<a class="inline-flex items-center gap-2 font-label text-sm uppercase tracking-widest text-primary group-hover:gap-4 transition-all" href="#">
-                            Read Manuscript
-                            <span class="material-symbols-outlined text-sm" data-icon="arrow_right_alt">arrow_right_alt</span>
-</a>
-</div>
-</div>
-<div class="w-full md:w-1/2">
-<div class="aspect-video overflow-hidden rounded-sm grayscale hover:grayscale-0 transition-all duration-700 shadow-sm">
-<img alt="Frosty window" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000" data-alt="Intricate frost patterns on a cold glass pane with blurred dark forest background in moody blue and grey tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3qvMj75FiSHR2tQeUcarHPqyzzanPYmHryCmRYG9IJBF6n0bdPTvhQdjNbClIoPbsSQdpoZTvsY5ebuG-5A-SyqUC5wOk5c6K-VttkmHuztBoB8Kn_jlB9T7hYaO00hpQH52yrMi-bQz8czHrfRDPfhelmpWonLPQp30A1dnp1vcJSmLLuBtqW9wNYWzFIPSAByZcJXQ7dgiLg0EX1zRLp4xruI4nq6ZL-eKn-7TLjvTv9oGsUAT--LP1DulR3ATdL4Ic47FECeE"/>
-</div>
-</div>
-</article>
 </section>
 <!-- Pagination / Load More -->
 <div class="mt-40 text-center">

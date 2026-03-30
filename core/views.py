@@ -48,9 +48,11 @@ def curations_view(request):
     return render(request, 'curations.html', {'featured_poems': featured_poems})
 
 
+from .models import Poet
+
 def poets_view(request):
-    users = User.objects.all()
-    return render(request, 'poets.html', {'users': users})
+    poets = Poet.objects.all()
+    return render(request, 'poets.html', {'poets': poets})
 
 
 def journal_view(request):

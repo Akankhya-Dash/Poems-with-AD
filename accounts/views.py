@@ -23,21 +23,22 @@ def login_view(request):
     if request.user.is_authenticated:
         return redirect('home')
 
+    next_url = request.GET.get('next', 'home')
+
     if request.method == 'POST':
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
+            # This gets the user object
             user = form.get_user()
+            # Log them in
             login(request, user)
-
-            messages.success(request, "Welcome back ✨")
-
-            return redirect('home')  # IMPORTANT
+            messages.success(request, f"Welcome back, {user.username} ✨")
+            # REDIRECT to home
+            return redirect('home')
         else:
             messages.error(request, "Invalid credentials")
-
     else:
         form = AuthenticationForm()
-
     return render(request, 'login.html', {'form': form})
 
 
