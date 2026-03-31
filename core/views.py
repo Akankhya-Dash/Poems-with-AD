@@ -83,7 +83,7 @@ def contact_view(request):
             # Optional: send email (safe fallback if email not configured)
             if hasattr(settings, 'EMAIL_HOST'):
                 send_mail(
-                    subject=f'Nocturne Contact: {name}',
+                    subject=f'Poems With AD Contact: {name}',
                     message=message,
                     from_email=email,
                     recipient_list=[settings.DEFAULT_FROM_EMAIL],

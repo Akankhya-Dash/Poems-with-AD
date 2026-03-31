@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About | Nocturne</title>
+<title>About | Poems With AD</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Sora:wght@300;400;600&amp;family=Literata:ital,wght@0,400;1,400&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -94,10 +94,40 @@
 <nav class="fixed top-0 w-full z-50 bg-[#f9f3ea]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl shadow-sm shadow-[#1d1b16]/5">
 <div class="flex items-center justify-between px-6 py-4 w-full">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#7c5454] dark:text-[#eab77a] cursor-pointer hover:opacity-70 transition-opacity duration-300 active:scale-95">menu</span>
+<span id="menuBtn"
+  class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+<script id="safe-script">
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+</div>
+<div id="menu"
+  class="hidden absolute left-8 top-20 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+
+    <a href="{% url 'home' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Home</a>
+
+    <a href="{% url 'about' %}" 
+       class="hover:text-[#7c5454] transition duration-500">About</a>
+
+    <a href="{% url 'submit' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+
+  </nav>
+</div>
 </div>
 <div class="font-serif italic text-2xl tracking-tight text-[#1d1b16] dark:text-[#f9f3ea]">
-                Nocturne
+                Poems With AD
             </div>
 <div class="flex items-center gap-6">
 <span class="hidden md:block font-sans uppercase tracking-widest text-[10px] text-[#7c5454] dark:text-[#eab77a] font-medium cursor-pointer">Explore</span>
@@ -122,7 +152,7 @@
 <section class="max-w-2xl mx-auto space-y-12 text-center">
 <div class="space-y-8">
 <p class="font-headline text-2xl md:text-3xl leading-relaxed text-on-background">
-                    Nocturne was born in the quiet hours between midnight and dawn—the threshold where the world hushes and the internal voice begins to sing.
+                    Poems With AD was born in the quiet hours between midnight and dawn—the threshold where the world hushes and the internal voice begins to sing.
                 </p>
 <p class="font-headline text-xl md:text-2xl leading-relaxed text-on-surface-variant font-light italic">
                     In an age of fleeting glances and algorithmic noise, we sought to build a monolith for the enduring. A place where a single stanza carries the weight of a heartbeat, and where the digital page breathes like linen.
@@ -140,7 +170,7 @@
 <div class="space-y-8">
 <h2 class="font-label uppercase tracking-[0.3em] text-[10px] text-primary font-bold">The Manifesto</h2>
 <p class="font-headline text-xl md:text-2xl leading-relaxed text-on-surface-variant font-light">
-                    We believe in the slow burn. In the word that stays with you long after the screen is dark. Whether you are a master of the craft or a seeker of solace, Nocturne is your canvas. Here, the ink never truly dries.
+                    We believe in the slow burn. In the word that stays with you long after the screen is dark. Whether you are a master of the craft or a seeker of solace, Poems With AD is your canvas. Here, the ink never truly dries.
                 </p>
 </div>
 </section>
@@ -152,21 +182,21 @@
 <blockquote class="font-headline text-3xl md:text-5xl italic text-on-background leading-tight mb-8">
                     "Poetry is the shadow cast by our imaginations."
                 </blockquote>
-<cite class="font-label uppercase tracking-widest text-xs text-primary">— The nocturne archives</cite>
+<cite class="font-label uppercase tracking-widest text-xs text-primary">— The Poems With AD archives</cite>
 </div>
 </section>
 </main>
 <!-- Footer -->
 <footer class="w-full py-12 px-8 bg-[#f9f3ea] dark:bg-[#1d1b16] border-t border-[#ede7de] dark:border-[#2d2a24]">
 <div class="flex flex-col items-center gap-6 w-full text-center">
-<div class="font-serif italic text-[#1d1b16] dark:text-[#f9f3ea] text-xl">Nocturne</div>
+<div class="font-serif italic text-[#1d1b16] dark:text-[#f9f3ea] text-xl">Poems With AD</div>
 <div class="flex gap-8">
 <a class="font-sans uppercase tracking-widest text-[10px] text-[#7c5454] dark:text-[#eab77a] underline underline-offset-4 duration-300 ease-in-out" href="#">The Manifesto</a>
 <a class="font-sans uppercase tracking-widest text-[10px] text-[#1d1b16]/40 dark:text-[#f9f3ea]/40 hover:text-[#7c5454] dark:hover:text-[#eab77a] transition-colors duration-300 ease-in-out" href="#">Privacy</a>
 <a class="font-sans uppercase tracking-widest text-[10px] text-[#1d1b16]/40 dark:text-[#f9f3ea]/40 hover:text-[#7c5454] dark:hover:text-[#eab77a] transition-colors duration-300 ease-in-out" href="#">Contact</a>
 </div>
 <p class="font-sans uppercase tracking-widest text-[10px] text-[#1d1b16]/40 dark:text-[#f9f3ea]/40">
-                © 2024 Nocturne. All rights reserved.
+                © 2024 Poems With AD. All rights reserved.
             </p>
 </div>
 </footer>

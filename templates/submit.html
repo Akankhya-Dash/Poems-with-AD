@@ -3,7 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Submit Verse | Nocturne</title>
+<title>Submit Verse | Poems With AD</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;family=Literata:ital,wght@0,200..900;1,200..900&amp;family=Sora:wght@100..800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -103,16 +103,48 @@
   </head>
 <body class="bg-[#f9f3ea] text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- TopAppBar -->
+ <span id="menuBtn"
+  class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+<script id="safe-script">
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+</div>
+<div id="menu"
+  class="hidden absolute left-8 top-20 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+
+    <a href="{% url 'home' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Home</a>
+
+    <a href="{% url 'about' %}" 
+       class="hover:text-[#7c5454] transition duration-500">About</a>
+
+    <a href="{% url 'submit' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+
+  </nav>
+</div>
 <header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl">
 <div class="flex justify-between items-center px-8 py-6 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-[#7c5454]" data-icon="menu">menu</span>
 </div>
-<h1 class="text-3xl font-headline font-medium tracking-wide italic overhanging-typography text-[#7c5454]">Nocturne</h1>
+
+<h1 class="text-3xl font-headline font-medium tracking-wide italic overhanging-typography text-[#7c5454]">Poems With AD</h1>
 <div class="flex items-center gap-6">
 <nav class="hidden md:flex gap-8 font-label text-sm uppercase tracking-widest text-[#1d1b16]/60">
-<a class="hover:text-[#7c5454] transition-colors duration-500" href="#">Archives</a>
-<a class="hover:text-[#7c5454] transition-colors duration-500" href="#">Poets</a>
+<a class="hover:text-[#7c5454] transition-colors duration-500" href="{% url 'archive' %}">Archives</a>
+<a class="hover:text-[#7c5454] transition-colors duration-500" href="{% url 'poets' %}">Poets</a>
 <a class="text-[#7c5454] font-bold underline decoration-1 underline-offset-8" href="{% url 'submit' %}">Submit</a>
 </nav>
 <div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border border-outline-variant/20">
@@ -191,10 +223,8 @@
 <div class="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-[#1d1b16]/5 max-w-7xl mx-auto pt-12">
 <div class="font-headline italic text-2xl text-[#7c5454]">Poems With AD.</div>
 <nav class="flex flex-wrap justify-center gap-8 font-label text-sm tracking-widest uppercase text-[#1d1b16]/40">
-<a class="hover:text-[#7c5454] transition-all" href="#">Archives</a>
-<a class="hover:text-[#7c5454] transition-all" href="#">Poets</a>
-<a class="hover:text-[#7c5454] transition-all" href="#">Submission Guidelines</a>
-<a class="hover:text-[#7c5454] transition-all" href="#">Privacy</a>
+<a class="hover:text-[#7c5454] transition-all" href="{% url 'archive' %}">Archives</a>
+<a class="hover:text-[#7c5454] transition-all" href="{% url 'poets' %}">Poets</a>
 </nav>
 <div class="font-label text-sm tracking-widest uppercase text-[#1d1b16]/40">
                 © 2026 Poems With AD. The Modern Manuscript.

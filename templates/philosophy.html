@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Philosophy | Nocturne</title>
+<title>Philosophy | Poems With AD</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400;0,700;1,400&amp;family=Sora:wght@300;400;600&amp;family=Literata:ital,wght@0,300;1,300&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -104,10 +104,40 @@
 <div class="flex justify-between items-center px-8 py-6 max-w-none">
 <div class="flex items-center gap-4">
 <button class="text-[#7c5454] dark:text-[#eab77a] hover:opacity-70 transition-opacity">
-<span class="material-symbols-outlined" data-icon="menu">menu</span>
+<span id="menuBtn"
+  class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+<script id="safe-script">
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+</div>
+<div id="menu"
+  class="hidden absolute left-8 top-20 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+
+    <a href="{% url 'home' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Home</a>
+
+    <a href="{% url 'about' %}" 
+       class="hover:text-[#7c5454] transition duration-500">About</a>
+
+    <a href="{% url 'submit' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+
+  </nav>
+</div>
 </button>
 </div>
-<a class="font-serif italic text-3xl tracking-tight text-[#7c5454] dark:text-[#eab77a]" href="/">Nocturne</a>
+<a class="font-serif italic text-3xl tracking-tight text-[#7c5454] dark:text-[#eab77a]" href="/">Poems With AD</a>
 <div class="flex items-center gap-6">
 <div class="hidden md:flex gap-8 text-[11px] font-sans uppercase tracking-widest text-[#1d1b16]/60">
 <a class="hover:text-[#7c5454] transition-colors" href="#">Archives</a>
@@ -125,7 +155,7 @@
 <header class="text-center mb-24">
 <p class="font-label italic text-primary mb-6 tracking-wide">The Foundation</p>
 <h1 class="font-headline text-6xl md:text-8xl text-on-surface mb-8 tracking-tighter text-wrap-balance leading-tight">
-                    The Nocturne Manifesto
+                    The Poems With AD Manifesto
                 </h1>
 <p class="font-headline italic text-2xl md:text-3xl text-on-surface-variant max-w-2xl mx-auto">
                     "Why we write in the quiet."
@@ -151,7 +181,7 @@
 <div class="h-[1px] w-12 bg-outline-variant/30"></div>
 </div>
 <p>
-                        Reading, in its highest form, is a private conversation between two souls across time and geography. Nocturne exists to preserve the sanctity of that dialogue. By stripping away the frantic notifications and high-contrast distractions of the modern web, we return to the monastery of the mind.
+                        Reading, in its highest form, is a private conversation between two souls across time and geography. Poems With AD exists to preserve the sanctity of that dialogue. By stripping away the frantic notifications and high-contrast distractions of the modern web, we return to the monastery of the mind.
                     </p>
 <blockquote class="my-20 text-center">
 <p class="font-headline italic text-3xl text-primary leading-snug">
@@ -160,7 +190,7 @@
 <footer class="mt-4 font-label text-sm uppercase tracking-[0.3em] text-on-surface-variant">— Rumi</footer>
 </blockquote>
 <p>
-                        We invite you to write slowly. To allow your ink to dry before moving to the next thought. To celebrate the shadow as much as the light. In the quiet of the nocturne, we find the truths that the daylight obscures.
+                        We invite you to write slowly. To allow your ink to dry before moving to the next thought. To celebrate the shadow as much as the light. In the quiet of the Poems With AD, we find the truths that the daylight obscures.
                     </p>
 <div class="pt-12">
 <a class="inline-flex items-center gap-4 group" href="#">
@@ -188,7 +218,7 @@
 <footer class="w-full py-20 px-12 mt-auto bg-[#f9f3ea] dark:bg-stone-900 border-t border-[#1d1b16]/5 dark:border-white/5">
 <div class="flex flex-col md:flex-row justify-between items-center gap-8">
 <div class="font-serif italic text-lg text-[#1d1b16] dark:text-stone-200">
-                Nocturne Manuscript
+                Poems With AD Manuscript
             </div>
 <div class="flex gap-12 text-[10px] font-sans uppercase tracking-[0.2em]">
 <a class="text-[#7c5454] dark:text-[#eab77a] border-b border-[#7c5454] opacity-80 hover:opacity-100 transition-all duration-700" href="#">Philosophy</a>
@@ -196,7 +226,7 @@
 <a class="text-[#1d1b16]/40 dark:text-stone-500 hover:text-[#1d1b16] dark:hover:text-stone-100 transition-all duration-700" href="#">Contact</a>
 </div>
 <div class="text-[10px] font-sans uppercase tracking-[0.2em] text-[#1d1b16]/40">
-                © Nocturne Manuscript. All rights reserved.
+                © Poems With AD Manuscript. All rights reserved.
             </div>
 </div>
 </footer>

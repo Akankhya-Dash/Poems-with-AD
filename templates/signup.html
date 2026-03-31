@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Nocturne | Join the Circle</title>
+<title>Poems With AD | Join the Circle</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Sora:wght@300;400;500;600&amp;family=Literata:ital,wght@0,300;0,400;0,500;1,300&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -119,8 +119,39 @@
 <body class="bg-[#f5efe6] text-on-surface min-h-screen flex flex-col font-body selection:bg-primary-container selection:text-on-primary-container">
 <!-- Top Navigation Anchor (Suppressed/Minimal for focused journey) -->
 <nav class="fixed top-0 w-full z-50 flex items-center justify-between px-8 py-8 md:px-16">
-<a class="text-[#1d1b16] font-headline italic text-2xl tracking-tight" href="/">Nocturne</a>
+<a class="text-[#1d1b16] font-headline italic text-2xl tracking-tight" href="/">Poems With AD</a>
 <div class="hidden md:flex gap-8 items-center">
+    <span id="menuBtn"
+  class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+<script id="safe-script">
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+</div>
+<div id="menu"
+  class="hidden absolute left-8 top-20 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+
+    <a href="{% url 'home' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Home</a>
+
+    <a href="{% url 'about' %}" 
+       class="hover:text-[#7c5454] transition duration-500">About</a>
+
+    <a href="{% url 'submit' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+
+  </nav>
+</div>
 <a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Philosophy</a>
 <a class="text-[10px] uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a>
 </div>
@@ -150,7 +181,7 @@
 
         <p>
             <label for="id_email">Email</label>
-            <input id="id_email" name="email" type="email" placeholder="heart@nocturne.com"/>
+            <input id="id_email" name="email" type="email" placeholder="heart@Poems With AD.com"/>
         </p>
 
         <p>
@@ -195,7 +226,7 @@
 </main>
 <!-- Minimal Footer -->
 <footer class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto border-t border-outline-variant/10">
-<p class="font-label text-[10px] uppercase tracking-widest text-outline">© 2024 Nocturne. All verses reserved.</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">© 2024 Poems With AD. All verses reserved.</p>
 <div class="flex gap-8">
 <a class="font-label text-[10px] uppercase tracking-widest text-outline hover:text-primary transition-colors" href="#">Privacy</a>
 <a class="font-label text-[10px] uppercase tracking-widest text-outline hover:text-primary transition-colors" href="#">Contact</a>

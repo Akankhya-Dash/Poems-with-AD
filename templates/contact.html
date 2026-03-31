@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Contact — Nocturne</title>
+<title>Contact — Poems With AD</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Sora:wght@100..800&amp;family=Literata:ital,wght@0,200..900;1,200..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -109,6 +109,7 @@
             outline: none;
             border-bottom: 2px solid #80571f;
         }
+        
     </style>
 <style>
     body {
@@ -121,9 +122,38 @@
 <header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(29,27,22,0.05)]">
 <div class="flex items-center justify-between px-8 py-6 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-[#7c5454] cursor-pointer transition-opacity duration-300 active:opacity-70" data-icon="menu">menu</span>
+<span id="menuBtn"
+  class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+<script id="safe-script">
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
 </div>
-<h1 class="font-serif text-3xl italic tracking-tight text-[#7c5454] dark:text-[#eab77a]">Nocturne</h1>
+<div id="menu"
+  class="hidden absolute left-8 top-20 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+
+    <a href="{% url 'home' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Home</a>
+
+    <a href="{% url 'about' %}" 
+       class="hover:text-[#7c5454] transition duration-500">About</a>
+
+    <a href="{% url 'submit' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+
+  </nav>
+</div>
+<h1 class="font-serif text-3xl italic tracking-tight text-[#7c5454] dark:text-[#eab77a]">Poems With AD</h1>
 <div class="flex items-center gap-6">
 <nav class="hidden md:flex items-center gap-8 font-label text-sm uppercase tracking-widest">
 <a class="text-[#1d1b16]/60 hover:text-[#7c5454] transition-colors duration-500" href="#">The Archive</a>
@@ -164,7 +194,7 @@
 </p>
 <p>
 <label>Email Address</label>
-<input placeholder="ink@nocturne.poet" type="email"/>
+<input placeholder="ink@Poems With AD.poet" type="email"/>
 </p>
 <p>
 <label>Your Message</label>
@@ -183,12 +213,12 @@
 <!-- Alternative Reach Block -->
 <div class="mt-24 text-center">
 <p class="font-sans text-[10px] uppercase tracking-[0.25em] text-on-surface-variant/60 mb-4">Alternatively, reach us at:</p>
-<a class="font-serif text-xl italic text-on-surface hover:text-primary transition-colors duration-500 underline decoration-primary/10 underline-offset-8" href="mailto:hello@nocturne.poet">hello@nocturne.poet</a>
+<a class="font-serif text-xl italic text-on-surface hover:text-primary transition-colors duration-500 underline decoration-primary/10 underline-offset-8" href="mailto:hello@Poems With AD.poet">hello@Poems With AD.poet</a>
 </div>
 </section>
 <!-- Atmospheric Image -->
 <section class="mt-40 w-full max-w-5xl h-[400px] overflow-hidden rounded-sm relative group">
-<img alt="The silence of ink" class="w-full h-full object-cover grayscale opacity-80 transition-transform duration-1000 group-hover:scale-105" data-alt="atmospheric close-up of an old vintage typewriter with soft morning sunlight hitting the metal keys and a blank piece of parchment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBntz9h2jsGxm7mzBGGrdkHfjJXQ4Zwsap01WCmZwV_V78AMDB1Pa8Xv-LsU3zlrPynpRjgjEI1CZhwq2Ts1fhIazPsv5zk-oxECCiVr_k2aGwuVMKdzWOXd-RdezGt393KFTm1-i_rWVcZ4C2-SLXpot7HkfRI-VYhMdQLtSYvWCvJiP1T8mtNg4uCV2cVsQEbPBRIX9S3hviQdRpQ0C1CX5-UqLltGYHqmRsoUsM_cA0WcqLsfcswobWmg_qBPAl5z_rt-8ZyM3c"/>
+<img alt="The silence of ink" class="w-full h-full object-cover grayscale opacity-80 transition-transform duration-1000 group-hover:scale-105" data-alt="atmospheric close-up of an old vintage typewriter with soft morning sunlight hitting the metal keys and a blank piece of parchment" src="/media/contacts/img1.jpg"/>
 <div class="absolute inset-0 bg-primary/5 mix-blend-multiply"></div>
 <div class="absolute bottom-12 left-12 text-background">
 <p class="font-serif italic text-2xl max-w-xs">"Words are a pretext. It is the inner bond that draws one person to another, not words."</p>
@@ -199,15 +229,13 @@
 <!-- Footer -->
 <footer class="w-full pt-24 pb-12 bg-[#f9f3ea] dark:bg-[#1d1b16] border-t border-[#7c5454]/5">
 <div class="flex flex-col md:flex-row items-center justify-between px-12 w-full space-y-8 md:space-y-0 max-w-7xl mx-auto">
-<div class="font-serif text-lg text-[#1d1b16] dark:text-[#fff9ef]">Nocturne Manuscript</div>
-<div class="flex flex-wrap justify-center gap-12">
-<a class="font-sans text-xs uppercase tracking-[0.2em] font-medium text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] transition-all duration-700" href="#">The Archive</a>
-<a class="font-sans text-xs uppercase tracking-[0.2em] font-medium text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] transition-all duration-700" href="#">Poetic License</a>
-<a class="font-sans text-xs uppercase tracking-[0.2em] font-medium text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] transition-all duration-700" href="#">Whispers</a>
+<div class="font-serif text-lg text-[#1d1b16] dark:text-[#fff9ef] ">Poems With AD Manuscript</div>
+
 </div>
 <p class="font-sans text-xs uppercase tracking-[0.2em] font-medium text-[#1d1b16]/40 dark:text-[#fff9ef]/40">
-                © Nocturne Manuscript. All rights reserved.
+                © Poems With AD Manuscript. All rights reserved.
             </p>
 </div>
 </footer>
+
 </body></html>

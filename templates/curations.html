@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Curations | Nocturne</title>
+<title>Curations | Poems With AD</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@200..800&amp;family=Sora:wght@100..800&amp;family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&amp;display=swap" rel="stylesheet"/>
 <!-- Icons -->
@@ -105,10 +105,40 @@
 <header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(29,27,22,0.05)]">
 <nav class="flex items-center justify-between px-8 py-6 max-w-none w-full">
 <div class="flex items-center space-x-4">
-<span class="material-symbols-outlined text-[#7c5454] dark:text-[#eab77a] cursor-pointer" data-icon="menu">menu</span>
+<span id="menuBtn"
+  class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+<script id="safe-script">
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+</div>
+<div id="menu"
+  class="hidden absolute left-8 top-20 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+
+    <a href="{% url 'home' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Home</a>
+
+    <a href="{% url 'about' %}" 
+       class="hover:text-[#7c5454] transition duration-500">About</a>
+
+    <a href="{% url 'submit' %}" 
+       class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+
+  </nav>
+</div>
 </div>
 <div class="text-3xl font-medium tracking-tighter text-[#7c5454] dark:text-[#eab77a] font-headline">
-                Nocturne
+                Poems With AD
             </div>
 <div class="flex items-center space-x-6">
 <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest font-manrope">
@@ -235,7 +265,7 @@
 <footer class="w-full py-20 mt-32 px-12 bg-[#f9f3ea] dark:bg-[#1d1b16] flex flex-col items-center justify-center text-center space-y-8">
 <div class="bg-[#ede7de] dark:bg-[#2d2a24] h-[1px] w-1/3 mx-auto mb-12"></div>
 <div class="font-['EB_Garamond'] italic text-2xl text-[#7c5454] dark:text-[#eab77a]">
-            Nocturne
+            Poems With AD
         </div>
 <nav class="flex flex-wrap justify-center gap-8 md:gap-12">
 <a class="font-manrope text-sm uppercase tracking-widest leading-relaxed text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] underline decoration-from-font underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Archives</a>
@@ -244,7 +274,7 @@
 <a class="font-manrope text-sm uppercase tracking-widest leading-relaxed text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] underline decoration-from-font underline-offset-4 transition-opacity opacity-80 hover:opacity-100" href="#">Colophon</a>
 </nav>
 <p class="font-manrope text-[10px] uppercase tracking-[0.3em] text-[#1d1b16]/30 dark:text-[#fff9ef]/30 mt-12">
-            © 2024 Nocturne. Printed in Silk &amp; Ink.
+            © 2024 Poems With AD. Printed in Silk &amp; Ink.
         </p>
 </footer>
 </body></html>

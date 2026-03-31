@@ -134,6 +134,31 @@
 <a class="hover:text-primary transition-colors" href="#">Wilderness</a>
 </div>
 </section>
+<!-- Menu Button -->
+<span id="menuBtn" class="material-symbols-outlined text-[#7c5454] cursor-pointer transition duration-500 hover:opacity-60">
+  menu
+</span>
+
+<!-- Menu -->
+<div id="menu"
+  class="hidden absolute left-8 top-20 z-50 bg-[#fff8f4]/95 backdrop-blur-xl border border-[#7c5454]/10 rounded-xl px-8 py-6 shadow-[0_20px_60px_rgba(59,49,37,0.08)] transition-all duration-500">
+  <nav class="flex flex-col gap-4 font-label text-xs uppercase tracking-[0.25em] text-[#6a5d50]">
+    <a href="{% url 'home' %}" class="hover:text-[#7c5454] transition duration-500">Home</a>
+    <a href="{% url 'about' %}" class="hover:text-[#7c5454] transition duration-500">About</a>
+    <a href="{% url 'submit' %}" class="hover:text-[#7c5454] transition duration-500">Write a Verse</a>
+  </nav>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("menuBtn");
+  const menu = document.getElementById("menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+});
+</script>
 <!-- Editorial List of Poems -->
 <section class="space-y-32">
 <!-- Poem Entry 1 -->
