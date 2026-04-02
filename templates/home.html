@@ -108,20 +108,33 @@
 </div>
 </div>
 <div class="flex items-center gap-6">
+
 {% if user.is_authenticated %}
-  <form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit" class="font-['Manrope'] text-sm tracking-widest uppercase text-[#1d1b16]/70 hover:text-[#7c5454] transition-colors">
-      Log Out
-    </button>
-  </form>
+
+    <a href="{% url 'profile' %}">
+        <div class="w-10 h-10 rounded-full overflow-hidden border border-[#7c5454]/30">
+            {% if request.user.profile.display_pic %}
+    <img src="{{ request.user.profile.display_pic }}" alt="DP" class="w-8 h-8 rounded-full object-cover">
 {% else %}
-  <a href="{% url 'login' %}" class="font-['Manrope'] text-sm tracking-widest uppercase text-[#1d1b16]/70 hover:text-[#7c5454] transition-colors">Sign In</a>
+    <span class="material-symbols-outlined text-2xl">person</span>
 {% endif %}
-<a href="{% url 'submit' %}"
-   class="bg-[#7c5454] text-white px-6 py-2 rounded-sm font-['Manrope'] text-sm tracking-widest uppercase">
-   Write a Verse
+        </div>
+    </a>
+    
+
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="text-sm uppercase">Logout</button>
+    </form>
+
+{% else %}
+    <a href="{% url 'login' %}">Sign In</a>
+{% endif %}
+
+<a href="{% url 'submit' %}" class="bg-[#7c5454] text-white px-6 py-2">
+    Write a Verse
 </a>
+
 </div>
 </nav>
 </header>

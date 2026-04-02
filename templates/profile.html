@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-primary": "#fff7f6", "surface-bright": "#fff8f0", "on-tertiary-container": "#456454", "error-container": "#fd795a", "secondary-dim": "#644f37", "primary-container": "#ffcaca", "on-secondary-fixed": "#4f3c25", surface: "#fff8f0", "on-primary-container": "#664141", "on-secondary": "#fff7f3", "error-dim": "#791903", "secondary-fixed": "#fcddbd", "inverse-primary": "#ffcaca", "on-primary-fixed": "#512f2f", "on-error-container": "#6e1400", "on-tertiary-fixed": "#335142", "tertiary-container": "#dcffea", outline: "#807a6e", "surface-container": "#f4ede1", "tertiary-dim": "#3b594a", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#dcffea", "on-tertiary": "#e6ffef", "surface-container-low": "#faf3e8", "primary-fixed-dim": "#f0bdbc", secondary: "#715b42", "on-surface-variant": "#645f54", "primary-fixed": "#ffcaca", "on-secondary-container": "#634e35", "primary-dim": "#6f4949", primary: "#7d5555", error: "#a73b21", "on-surface": "#363229", "on-error": "#fff7f6", "secondary-fixed-dim": "#edcfb0", "surface-container-high": "#efe7db", "inverse-surface": "#100e0a", tertiary: "#476656", background: "#fff8f0", "surface-container-highest": "#eae2d4", "surface-tint": "#7d5555", "on-secondary-fixed-variant": "#6d583e", "on-tertiary-fixed-variant": "#506f5e", "on-primary-fixed-variant": "#714a4a", "secondary-container": "#fcddbd", "inverse-on-surface": "#a19c95", "surface-dim": "#e1d9cb", "outline-variant": "#b8b1a4", "tertiary-fixed-dim": "#cef0dc", "surface-variant": "#eae2d4", "on-background": "#363229"}, fontFamily: {headline: ["Noto Serif"], body: ["Manrope"], label: ["Manrope"], display: "Noto Serif"}, borderRadius: {DEFAULT: "0px", lg: "0px", xl: "0px", full: "0px"}}}};</script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24
+    }
+.parchment-texture {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDC5Beqx5Woq17fle5NJOk_x5jPgLOknokyc2F4Sl6z0vOq59Cwpw805BqjHIX0m9xp4OVyVyPy27gGK_6u0ybaIUAwtqgJ_SSrZzSmQ_EbFdd03as9HJ_bsgj83sGjQvWSIaFLQq-9DPoHs0sDqtY-L3UIuZoKcRNkrXxtwLiQkigb2FUv93mvxDUzOjOabTUjnczvWHqZHedPzq3baKlVFf3PDkwPaFSOd5j9X-vcrod_EEYozmeeHSTDo3IjlreTPL2A_UrifAs)
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container min-h-screen parchment-texture">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl no-border bg-[#ede7de] dark:bg-[#2d2a24] flat no shadows">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#7c5454] dark:text-[#eab77a] cursor-pointer Active: opacity-70 transition-all hover:bg-[#ede7de] dark:hover:bg-[#2d2a24] transition-colors duration-500 p-2 rounded-full">menu</span>
+<h1 class="font-serif italic text-2xl text-[#1d1b16] dark:text-[#fff9ef]">The Monolith</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<a class="font-sans text-[11px] uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-all" href="#">Library</a>
+<a class="font-sans text-[11px] uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-all" href="#">Compose</a>
+<a class="font-sans text-[11px] uppercase tracking-widest text-[#1d1b16]/60 dark:text-[#fff9ef]/60 hover:text-[#7c5454] transition-all" href="#">Journal</a>
+<a class="font-sans text-[11px] uppercase tracking-widest text-[#7c5454] dark:text-[#eab77a] font-bold" href="#">Profile</a>
+</nav>
+<span class="material-symbols-outlined text-[#7c5454] dark:text-[#eab77a] cursor-pointer Active: opacity-70 transition-all hover:bg-[#ede7de] dark:hover:bg-[#2d2a24] transition-colors duration-500 p-2 rounded-full">settings</span>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-24 max-w-7xl mx-auto">
+<!-- Profile Header Section -->
+<section class="flex flex-col md:flex-row gap-12 items-center md:items-start mb-24">
+<div class="relative group">
+<div class="w-48 h-48 rounded-full overflow-hidden border border-outline-variant/20 bg-surface-container-low p-1">
+                    {% if profile.display_pic %}
+    <img alt="{{ user.username }}" class="w-full h-full object-cover rounded-full" src="{{ profile.display_pic }}">
+{% else %}
+    <div class="w-full h-full bg-surface-container-highest flex items-center justify-center rounded-full">
+        <span class="material-symbols-outlined text-4xl text-on-surface-variant/40">person</span>
+    </div>
+{% endif %}
+                </div>
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary w-10 h-10 rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-sm">edit</span>
+</div>
+</div>
+<div class="flex-1 text-center md:text-left space-y-4">
+<h2 class="font-headline text-6xl md:text-7xl tracking-tight text-on-surface">{{ user.username }}</h2>
+<p class="font-label text-on-surface-variant tracking-wide italic">{{ user.email }}</p>
+<div class="max-w-2xl py-4 border-l-2 border-primary/20 pl-6">
+<p class="font-headline text-2xl italic leading-relaxed text-on-surface/80">
+                        {{ profile.bio|default:"In the silence of the night, every soul becomes a poet, searching for the light in the depths of the ink." }}
+                    </p>
+</div>
+</div>
+</section>
+<!-- Bento Layout for Stats and Recent Work -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Actions & Stats -->
+<aside class="lg:col-span-4 space-y-8">
+<!-- Stats Card -->
+<div class="bg-surface-container-low p-8 rounded-lg border-l-4 border-primary">
+<span class="font-sans text-[10px] uppercase tracking-[0.2em] text-on-surface-variant block mb-2">Portfolio Volume</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-6xl text-primary">{{ poem_count }}</span>
+<span class="font-label text-on-surface-variant italic">Manifestations</span>
+</div>
+</div>
+<!-- Action Links -->
+<div class="space-y-4">
+<a class="group flex items-center justify-between p-6 bg-primary text-on-primary rounded-sm transition-all hover:brightness-110" href="#">
+<span class="font-body font-semibold tracking-wide">Write New Poem</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">auto_stories</span>
+</a>
+<div class="grid grid-cols-1 gap-2">
+<a class="flex items-center gap-3 p-4 text-on-surface-variant hover:bg-surface-container-high rounded-sm transition-colors font-label italic" href="#">
+<span class="material-symbols-outlined text-lg">lock_reset</span>
+                            Change Password
+                        </a>
+<a class="flex items-center gap-3 p-4 text-error/80 hover:bg-error-container/10 rounded-sm transition-colors font-label italic" href="#">
+<span class="material-symbols-outlined text-lg">logout</span>
+                            Logout
+                        </a>
+</div>
+</div>
+</aside>
+<!-- Right Column: Recent Poems -->
+<section class="lg:col-span-8">
+<div class="bg-surface-container-lowest p-8 md:p-12 rounded-lg shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-end mb-12">
+<h3 class="font-headline text-4xl">Your Recent Works</h3>
+<a class="font-label text-sm italic text-primary hover:underline decoration-primary/30 underline-offset-4" href="#">View All Archive</a>
+</div>
+<div class="space-y-16">
+                        {% for poem in poems %}
+                        <article class="group cursor-pointer">
+<div class="flex flex-col gap-2">
+<span class="font-sans text-[9px] uppercase tracking-widest text-on-surface-variant/60">{{ poem.created_at|date:"M d, Y" }}</span>
+<h4 class="font-headline text-3xl text-on-surface group-hover:text-primary transition-colors">{{ poem.title }}</h4>
+<p class="font-body text-on-surface-variant/80 line-clamp-2 max-w-xl leading-relaxed italic">
+                                    {{ poem.snippet|default:"Whispers of the night echo through the hallways of time, leaving traces of memories we never truly owned..." }}
+                                </p>
+</div>
+</article>
+                        {% empty %}
+                        <div class="py-24 text-center border-2 border-dashed border-outline-variant/20 rounded-xl">
+<span class="material-symbols-outlined text-5xl text-on-surface-variant/20 block mb-4">history_edu</span>
+<p class="font-headline text-2xl text-on-surface-variant/40 italic">You haven’t written anything yet.</p>
+<a class="inline-block mt-6 font-label text-primary hover:underline" href="#">Begin your first manuscript</a>
+</div>
+                        {% endfor %}
+                    </div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 pb-safe bg-[#fff9ef]/80 dark:bg-[#1d1b16]/80 backdrop-blur-xl no-border bg-[#f9f3ea] dark:bg-[#25231e] shadow-[0_-4px_30px_rgba(29,27,22,0.05)]">
+<div class="flex justify-around items-center w-full h-20 px-4">
+<button class="flex flex-col items-center justify-center text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] transition-all scale-95 duration-300">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-sans text-[11px] uppercase tracking-widest">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] transition-all scale-95 duration-300">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-sans text-[11px] uppercase tracking-widest">Compose</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#1d1b16]/40 dark:text-[#fff9ef]/40 hover:text-[#7c5454] transition-all scale-95 duration-300">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-sans text-[11px] uppercase tracking-widest">Journal</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#7c5454] dark:text-[#eab77a] scale-95 duration-300">
+<span class="material-symbols-outlined">person</span>
+<span class="font-sans text-[11px] uppercase tracking-widest">Profile</span>
+</button>
+</div>
+</nav>
+<!-- Background Decorative Elements -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[10%] right-[-5%] w-[40vw] h-[40vw] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[30vw] h-[30vw] bg-tertiary-container/10 rounded-full blur-[100px]"></div>
+</div>
+</body></html>

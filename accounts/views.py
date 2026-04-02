@@ -45,3 +45,27 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+from poems.models import Poem
+
+from .models import Profile
+
+@login_required
+def profile_view(request):
+    user = request.user
+
+    profile, created = Profile.objects.get_or_create(user=user)
+
+    poems = Poem.objects.filter(author=user).order_by('-created_at')[:5]
+    poem_count = Poem.objects.filter(author=user).count()
+
+    context = {
+        'user': user,
+        'profile': profile,
+        'poems': poems,
+        'poem_count': poem_count,
+    }
+
+    return render(request, 'profile.html', context)
