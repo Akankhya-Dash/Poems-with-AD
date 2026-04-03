@@ -40,7 +40,19 @@ def mood_view(request, mood_name):
     
 def archive_view(request):
     poems = Poem.objects.filter(is_published=True).order_by('-created_at')
-    return render(request, 'archive.html', {'poems': poems})
+    moods = MoodTag.objects.all()
+
+    # Optional mood filter
+    mood_name = request.GET.get('mood')
+    if mood_name:
+        poems = poems.filter(mood__name=mood_name)
+
+    context = {
+        'poems': poems,
+        'moods': moods
+    }
+
+    return render(request, 'archive.html', context)
 
 
 def curations_view(request):
