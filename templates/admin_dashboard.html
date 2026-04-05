@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Monolith Admin | Nocturne</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#363229",
+                        "surface-variant": "#eae2d4",
+                        "on-secondary-fixed": "#4f3c25",
+                        "surface": "#fff8f0",
+                        "primary-dim": "#6f4949",
+                        "secondary-fixed": "#fcddbd",
+                        "error-container": "#fd795a",
+                        "inverse-surface": "#100e0a",
+                        "surface-tint": "#7d5555",
+                        "secondary-dim": "#644f37",
+                        "on-error": "#fff7f6",
+                        "surface-container-low": "#faf3e8",
+                        "on-tertiary-container": "#456454",
+                        "on-secondary": "#fff7f3",
+                        "on-tertiary": "#e6ffef",
+                        "on-secondary-container": "#634e35",
+                        "surface-container": "#f4ede1",
+                        "tertiary-fixed-dim": "#cef0dc",
+                        "surface-dim": "#e1d9cb",
+                        "tertiary": "#476656",
+                        "error": "#a73b21",
+                        "on-tertiary-fixed": "#335142",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#eae2d4",
+                        "on-primary-fixed-variant": "#714a4a",
+                        "surface-container-high": "#efe7db",
+                        "primary-container": "#ffcaca",
+                        "on-tertiary-fixed-variant": "#506f5e",
+                        "background": "#fff8f0",
+                        "on-secondary-fixed-variant": "#6d583e",
+                        "inverse-on-surface": "#a19c95",
+                        "outline-variant": "#b8b1a4",
+                        "primary-fixed-dim": "#f0bdbc",
+                        "tertiary-fixed": "#dcffea",
+                        "secondary-container": "#fcddbd",
+                        "on-surface-variant": "#645f54",
+                        "surface-bright": "#fff8f0",
+                        "secondary": "#715b42",
+                        "primary-fixed": "#ffcaca",
+                        "on-primary-container": "#664141",
+                        "tertiary-dim": "#3b594a",
+                        "on-primary": "#fff7f6",
+                        "inverse-primary": "#ffcaca",
+                        "error-dim": "#791903",
+                        "primary": "#7d5555",
+                        "secondary-fixed-dim": "#edcfb0",
+                        "outline": "#807a6e",
+                        "on-surface": "#363229",
+                        "on-primary-fixed": "#512f2f",
+                        "tertiary-container": "#dcffea",
+                        "on-error-container": "#6e1400"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fff8f0;
+            color: #363229;
+            font-family: 'Manrope', sans-serif;
+        }
+        .serif-headline {
+            font-family: 'Noto Serif', serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen">
+<!-- Navigation Drawer -->
+<aside class="hidden md:flex h-screen w-72 fixed left-0 top-0 bg-[#f9f3ea] dark:bg-[#1d1b16] flex-col p-6 space-y-4 z-50 overflow-y-auto">
+<div class="mb-8 px-2">
+<h2 class="font-serif text-xl text-[#7c5454] dark:text-[#ede7de]">Curator's Console</h2>
+</div>
+<nav class="space-y-2">
+<a class="flex items-center space-x-3 px-4 py-3 text-[#1d1b16] dark:text-[#ede7de] opacity-70 hover:pl-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-sans uppercase tracking-widest text-xs">Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 bg-[#7c5454] text-white rounded-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-sans uppercase tracking-widest text-xs">User Management</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-[#1d1b16] dark:text-[#ede7de] opacity-70 hover:pl-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="feather">flight</span>
+<span class="font-sans uppercase tracking-widest text-xs">Poem Moderation</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-[#1d1b16] dark:text-[#ede7de] opacity-70 hover:pl-2 transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-sans uppercase tracking-widest text-xs">System Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-8 border-t border-[#ede7de]/30">
+<div class="flex items-center space-x-3 px-4">
+<div class="w-8 h-8 rounded-full bg-[#7c5454]/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#7c5454] text-sm">person</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] uppercase tracking-tighter opacity-50">Head Curator</span>
+<span class="text-xs font-bold">Admin Profile</span>
+</div>
+</div>
+</div>
+</aside>
+<main class="md:ml-72 min-h-screen relative">
+<!-- Top App Bar -->
+<header class="bg-[#fff9ef]/80 backdrop-blur-xl docked full-width top-0 z-50 flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-[#7c5454]" data-icon="menu_open">menu_open</span>
+<h1 class="text-2xl font-serif italic tracking-tight text-[#7c5454]">The Monolith Admin</h1>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden sm:flex space-x-8 text-xs font-sans uppercase tracking-widest">
+<a class="text-[#7c5454] font-bold border-b-2 border-[#7c5454]" href="#">Analytics</a>
+<a class="text-[#1d1b16]/60 hover:text-[#7c5454] transition-colors" href="#">Reports</a>
+<a class="text-[#1d1b16]/60 hover:text-[#7c5454] transition-colors" href="#">Logs</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#ede7de] flex items-center justify-center border border-[#7c5454]/10">
+<span class="material-symbols-outlined text-[#7c5454]">account_circle</span>
+</div>
+</div>
+</header>
+<div class="max-w-7xl mx-auto px-8 py-12">
+<!-- Hero Section / Editorial Intro -->
+<div class="mb-20">
+<h2 class="serif-headline text-5xl text-[#363229] mb-4">The Pulse of Nocturne</h2>
+<p class="font-body text-[#645f54] text-lg max-w-2xl leading-relaxed">
+                    Where whispers are curated and voices are forged. Oversee the lineage of modern manuscript in a silent, cinematic space of moderation and growth.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- The Circle of Poets (Users) Section -->
+<section class="lg:col-span-4 space-y-8">
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="serif-headline text-2xl">The Circle of Poets</h3>
+<span class="text-[10px] font-sans uppercase tracking-[0.2em] opacity-40">Recent Applications</span>
+</div>
+
+{% for user in users %}
+<div class="bg-surface-container-low p-8 rounded-sm">
+
+    <p class="serif-headline text-xl">{{ user.username }}</p>
+    <p class="text-xs italic">{{ user.email }}</p>
+
+    <div class="flex space-x-4 mt-4">
+
+        <form action="{% url 'approve_user' user.id %}" method="post">
+            {% csrf_token %}
+            <button class="bg-[#7c5454] text-white px-4 py-2 text-xs">
+                Approve
+            </button>
+        </form>
+
+        <form action="{% url 'remove_user' user.id %}" method="post">
+            {% csrf_token %}
+            <button class="border px-4 py-2 text-xs">
+                Remove
+            </button>
+        </form>
+
+    </div>
+</div>
+{% endfor %}
+
+</section>
+<!-- The Archive Moderation (Poems) Section -->
+<section class="lg:col-span-8 space-y-8">
+<div class="flex items-baseline justify-between mb-2">
+<h3 class="serif-headline text-2xl">The Archive Moderation</h3>
+<span class="text-[10px] font-sans uppercase tracking-[0.2em] opacity-40">Submissions Queue</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Poem Card 1 -->
+<div class="bg-surface-container-lowest p-10 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-700 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 flex flex-wrap justify-end gap-2">
+<!-- Status Badges - Simulated Conditional Tags -->
+<span class="px-2 py-0.5 bg-[#476656]/10 text-[#476656] text-[8px] uppercase tracking-widest font-bold rounded-full">Published</span>
+<span class="px-2 py-0.5 bg-[#7d5555]/10 text-[#7d5555] text-[8px] uppercase tracking-widest font-bold rounded-full">Featured</span>
+</div>
+<div class="mb-10">
+<p class="serif-headline text-2xl leading-tight mb-2 group-hover:text-[#7c5454] transition-colors">The Weight of Amber Skies</p>
+<p class="text-xs uppercase tracking-[0.1em] text-on-surface-variant/60">by Elena Solstice</p>
+</div>
+<div class="h-px bg-outline-variant/10 w-full mb-8"></div>
+<div class="space-y-3">
+<form action="/admin/publish-poem/101" method="post">
+<!-- {% csrf_token %} -->
+<button class="w-full flex items-center justify-center space-x-2 border border-[#7c5454]/20 py-3 text-[10px] uppercase tracking-widest font-bold text-[#7c5454] hover:bg-[#7c5454] hover:text-white transition-all scale-95 active:opacity-80" type="submit">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span>Approve &amp; Publish</span>
+</button>
+</form>
+<form action="/admin/feature-poem/101" method="post">
+<!-- {% csrf_token %} -->
+<button class="w-full flex items-center justify-center space-x-2 bg-[#f4ede1] py-3 text-[10px] uppercase tracking-widest font-bold text-[#363229] hover:bg-[#ede7de] transition-all scale-95 active:opacity-80" type="submit">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Unfeature Poem</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Poem Card 2 -->
+<div class="bg-surface-container-lowest p-10 rounded-sm shadow-sm hover:shadow-md transition-shadow duration-700 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 flex flex-wrap justify-end gap-2">
+<span class="px-2 py-0.5 bg-on-surface-variant/10 text-on-surface-variant text-[8px] uppercase tracking-widest font-bold rounded-full">Pending Approval</span>
+</div>
+<div class="mb-10">
+<p class="serif-headline text-2xl leading-tight mb-2 group-hover:text-[#7c5454] transition-colors">Silhouettes in the Dust</p>
+<p class="text-xs uppercase tracking-[0.1em] text-on-surface-variant/60">by Julian Thorne</p>
+</div>
+<div class="h-px bg-outline-variant/10 w-full mb-8"></div>
+<div class="space-y-3">
+<form action="/admin/publish-poem/102" method="post">
+<!-- {% csrf_token %} -->
+<button class="w-full flex items-center justify-center space-x-2 border border-[#7c5454]/20 py-3 text-[10px] uppercase tracking-widest font-bold text-[#7c5454] hover:bg-[#7c5454] hover:text-white transition-all scale-95 active:opacity-80" type="submit">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">auto_stories</span>
+<span>Approve &amp; Publish</span>
+</button>
+</form>
+<form action="/admin/feature-poem/102" method="post">
+<!-- {% csrf_token %} -->
+<button class="w-full flex items-center justify-center space-x-2 bg-[#f4ede1] py-3 text-[10px] uppercase tracking-widest font-bold text-[#363229] hover:bg-[#ede7de] transition-all scale-95 active:opacity-80" type="submit">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">star</span>
+<span>Feature Poem</span>
+</button>
+</form>
+</div>
+</div>
+<!-- Full Width Cinematic Featured Card -->
+<div class="md:col-span-2 relative h-64 rounded-sm overflow-hidden flex items-end p-10 group">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale opacity-30 group-hover:scale-105 transition-transform duration-1000" data-alt="atmospheric close-up of ink pen on aged paper with soft sunlight hitting the textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7NFMXmFKFG_ALDkTuLzxXe7rrA_CYOhvFkOKkl7bTYgho4htbQ_26U8bgVjv8ESB9z4Y8UY_Gy-TdMM_iTcaHid1a-imS4s8sVv5F_qFEjtrNXvyE_pcDQzlmydxXFSsO538WeSNk-s6SBRTguFwsD3MKevFx6qOxhgqFHDxBSvCQYbIp0TnnjNBgyFpn7HxOBHtg0utUfmNe71_u__1ghj9VORVip-0NBdHIwk07iGe4y7KA9Qq8O-5ZzCM3weYq_grk9whI1t8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#fff8f0] via-[#fff8f0]/40 to-transparent"></div>
+</div>
+<div class="relative z-10">
+<span class="text-[10px] font-sans uppercase tracking-[0.3em] text-[#7c5454] mb-2 block font-bold">Legacy Piece</span>
+<h4 class="serif-headline text-3xl italic">"Echoes of the Inkwell"</h4>
+<p class="text-sm opacity-60 font-body">Featured Poem of the Month by Anonymous</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- System Stats Footer / Soft Elevation -->
+<footer class="mt-24 bg-surface-container-high py-12 px-8 border-t border-[#7c5454]/5">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center opacity-60">
+<div class="mb-8 md:mb-0">
+<p class="serif-headline italic text-lg text-[#7c5454]">Nocturne Platform</p>
+<p class="text-[10px] uppercase tracking-widest">v2.4.1 Stable | Core Engine</p>
+</div>
+<div class="grid grid-cols-3 gap-12 text-center md:text-right">
+<div>
+<span class="block text-2xl font-serif">1.2k</span>
+<span class="text-[8px] uppercase tracking-widest">Poems</span>
+</div>
+<div>
+<span class="block text-2xl font-serif">408</span>
+<span class="text-[8px] uppercase tracking-widest">Poets</span>
+</div>
+<div>
+<span class="block text-2xl font-serif">24</span>
+<span class="text-[8px] uppercase tracking-widest">Queued</span>
+</div>
+</div>
+</div>
+</footer>
+</main>
+</body></html>

@@ -20,6 +20,7 @@ class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,related_name='profile')
     profile_pic = models.ImageField(upload_to='profile_pics/', blank=True, null=True)
     bio = models.TextField(blank=True)
+    is_writer = models.BooleanField(default=False)   
 
     def __str__(self):
         return self.user.username

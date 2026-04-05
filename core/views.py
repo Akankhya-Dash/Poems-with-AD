@@ -32,7 +32,7 @@ def mood_view(request, mood_name):
 
     poems = base_queryset().filter(mood=mood)
 
-    return render(request, 'home.html', {
+    return render(request, 'archive.html', {
         'poems': poems,
         'moods': MoodTag.objects.all(),
         'active_mood': mood_name

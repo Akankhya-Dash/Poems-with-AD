@@ -13,6 +13,8 @@ urlpatterns = [
     path('philosophy/', views.philosophy_view, name='philosophy'),
     path('privacy/', views.privacy_view, name='privacy'),
     path('contact/', views.contact_view, name='contact'),
+    path('mood/<str:mood_name>/', views.mood_view, name='mood_view'),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

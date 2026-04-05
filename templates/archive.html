@@ -125,8 +125,10 @@
 </div>
 <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 font-label text-sm tracking-widest uppercase opacity-80">
                 {% for mood in moods %}
-                    <a class="hover:text-primary transition-colors duration-300" href="{% url 'mood_filter' mood.name %}">{{ mood.name }}</a>
+                 <a class="hover:text-primary transition-colors duration-300" href="{% url 'mood_view' mood.name %}">{{ mood.name }}</a>
                 {% endfor %}
+
+                
                 <!-- Manual fallbacks for visual representation if moods list is empty in preview -->
 <a class="text-primary font-semibold" href="#">Solitude</a>
 <a class="hover:text-primary transition-colors" href="#">Melancholy</a>
