@@ -3,6 +3,9 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import SignUpForm
 from django.contrib import messages
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 def signup_view(request):
     if request.method == 'POST':
@@ -48,7 +51,7 @@ def logout_view(request):
 
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from poems.models import Poem, User
+from poems.models import Poem
 
 from .models import Profile
 
